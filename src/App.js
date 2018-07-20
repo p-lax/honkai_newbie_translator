@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import './App.css';
 import Translator from './translator.js'
 import EquipComponent from './components/equipComponent.js'
+import 'bootstrap/dist/css/bootstrap.css'
 
 class App extends Component {
   constructor(props) {
@@ -30,14 +31,22 @@ class App extends Component {
     return (
       <div className="App">
         <header className="App-header">
-          <h1 className="App-title">키갤 장비성흔 번역기 (Beta)</h1>
+          <h1 className="App-title"><i className="main_icon"></i>키갤 장비성흔 번역기</h1>
+          <div className="versiontag">ver. beta 1.0</div>
         </header>
-        <div className="App-intro">
-          <textarea className="text-area" value={this.state.value} onChange={this.handleChange} />
-          <div className="text-area">
-          {
-            this.makeHtml(this.state.translated)
-          }
+        <div className="App-intro container">
+          <div className="row">
+            <div className="col-sm">
+              <textarea className="text-area" value={this.state.value} onChange={this.handleChange}
+                placeholder="장비 약자를 입력 (예: 미막미 후붘)" />
+            </div>
+            <div className="col-sm">
+              <div className="text-area">
+              {
+                this.makeHtml(this.state.translated)
+              }
+              </div>
+            </div>
           </div>
         </div>
       </div>

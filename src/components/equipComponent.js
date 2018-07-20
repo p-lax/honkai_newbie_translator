@@ -25,9 +25,9 @@ class EquipComponent extends Component {
     }
   }
 
-  makeImageTag(urlKey, type) {
+  makeImageTag(urlKey, type, alt) {
     if(urlKey) {
-      return <img src={"./img/"+type+"/" + urlKey + ".png"} alt={type} />
+      return <img src={"./img/"+type+"/" + urlKey + ".png"} alt={alt} />
     } else {      
       return <span />
     }
@@ -35,10 +35,10 @@ class EquipComponent extends Component {
 
   textDetail(item) {
     // console.log(item);
-    if(item && ((item.s && item.s[0].oName) || (item.w && item.w.oName))){
+    if(item && ((item.s && (item.s[0].oName || item.s[1].oName || item.s[2].oName )  ) || (item.w && item.w.oName))){
       return (
         <span>
-          <br/><span>------------------------------------------------</span><br/><br/>
+          <br/><span>------------------------</span><br/>
           {
             item.w.skill?(
               <span>액티브: {item.w.skill}<br/><br/></span>
@@ -98,6 +98,11 @@ class EquipComponent extends Component {
     var stigma = item.s;
 
     var stigmaHeadText = "" + stigma[0].one + stigma[1].one + stigma[2].one;
+
+    if(stigma[0].one && (stigma[0].one === stigma[1].one) && (stigma[1].one === stigma[2].one)){
+      stigmaHeadText = "" + stigma[1].oName + " 3셋"
+    }
+
     var weaponText = "";
 
     if(weapon.oName && weapon.type)
@@ -115,12 +120,12 @@ class EquipComponent extends Component {
 
     return (
       <p>
-        <font size="3">
+        <font size="2">
           <span>{headText}</span><br/>
-          {this.makeImageTag(weapon.img, "weapon")}&nbsp;&nbsp;&nbsp;
-          {this.makeImageTag(stigma[0].imgs[0], "stigma")}
-          {this.makeImageTag(stigma[1].imgs[1], "stigma")}
-          {this.makeImageTag(stigma[2].imgs[2], "stigma")}
+          {this.makeImageTag(weapon.img, "weapon", weapon.short)}&nbsp;&nbsp;&nbsp;
+          {this.makeImageTag(stigma[0].imgs[0], "stigma", stigma[0].short)}
+          {this.makeImageTag(stigma[1].imgs[1], "stigma", stigma[1].short)}
+          {this.makeImageTag(stigma[2].imgs[2], "stigma", stigma[2].short)}
           <br />
           <br />
           <span>{weaponText}</span>

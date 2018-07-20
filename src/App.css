@@ -4,13 +4,22 @@
 
 .App-header {
   background-color: #222;
-  height: 70px;
-  padding: 20px;
+  height: 90px;
+  padding: 30px;
   color: white;
+  position: relative;
+}
+
+.versiontag {
+  position: absolute;
+  right: 10px;
+  bottom: 5px;
+  color: #ededed;
 }
 
 .App-title {
   font-size: 1.5em;
+  font-weight: bold;
 }
 
 .App-intro {
@@ -18,25 +27,47 @@
   padding: 20px;
 }
 
+.main_icon {
+  width: 88px;
+  height: 82px;
+  position: absolute;
+  margin-left: -105px;
+  margin-top: -20px;
+  background-image: url('./main_icon.png');
+  background-size: 100%;
+  background-repeat: no-repeat;
+}
+
 .text-area {
-  width: 640px;
-  min-height: 100px;
-  margin: 0 10px;
+  width: 100%;
   padding: 10px;
+  margin-bottom: 10px;
   resize: none;
   border: 1px black solid;
   display: inline-block;
   vertical-align: top;
   text-align: left;
+  min-height: 50px;
 }
 
 textarea.text-area {
-  height: 50px;
   min-height: 50px;
 }
 
 .text-area p {
   padding: 0; margin: 0;
+}
+
+.text-area img {
+  width: 96px;
+  height: 84px;
+}
+
+@media (max-width: 767px) {
+  .text-area img {
+    width: 64px;
+    height: 56px;
+  }
 }
 
 div.text-area {
