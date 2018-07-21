@@ -227,6 +227,8 @@ const Translator = (text) => {
   setReadyStigma(1);
   setReadyStigma(2);
 
+  // console.log(text);
+
   if(stigmaResultObject.ready.length === 1 && stigmaResultObject.specific.length === 0) {
     // 단일 성흔
     result.s[0] = stigmaResultObject.ready[0];

@@ -36,7 +36,7 @@ class App extends Component {
       <br/>
       <span>- 도움받은 곳</span>
       <ul>성흔 데이터베이스 [<a href='http://rosia.tistory.com/141'>http://rosia.tistory.com/141</a>]</ul>
-      <ul>뉴비가 뉴비를 위해 쓴 성흔정리 [<a href='gall.dcinside.com/mgallery/board/view/?id=kawai3&no=851180'>http://gall.dcinside.com/mgallery/board/view/?id=kawai3&no=851180</a>]</ul>
+      <ul>뉴비가 뉴비를 위해 쓴 성흔정리 [<a href='http://gall.dcinside.com/mgallery/board/view/?id=kawai3&no=851180'>http://gall.dcinside.com/mgallery/board/view/?id=kawai3&no=851180</a>]</ul>
     </font></div>)
   }
 

@@ -27,7 +27,8 @@ class EquipComponent extends Component {
 
   makeImageTag(urlKey, type, alt) {
     if(urlKey) {
-      return <img src={"./img/"+type+"/" + urlKey + ".png"} alt={alt} />
+      // return <img src={"./img/"+type+"/" + urlKey + ".png"} alt={alt} />
+      return <img src={"https://t1.daumcdn.net/cfile/tistory/" + urlKey} alt={alt} />
     } else {      
       return <span />
     }
