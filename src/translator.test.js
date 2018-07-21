@@ -235,12 +235,22 @@ describe('Translator 테스트', () =>{
     expect(checkStigmaName(res)).toEqual(["헌원", "케플러", "뉴턴"]);
   });
 
+  it('정막늒', () => {
+    let res = Translator("정막늒");
+    expect(checkStigmaName(res)).toEqual(["정위", "막스", "뉴턴"]);
+  });
+
 
   // 원거리 물리딜러들
 
   it('철흑흑', () => {
     let res = Translator("철흑흑");
     expect(checkStigmaName(res)).toEqual(["슈뢰딩거", "흑헌원", "흑헌원"]);
+  });  
+
+  it('철이이', () => {
+    let res = Translator("철이이");
+    expect(checkStigmaName(res)).toEqual(["슈뢰딩거", "이홍", "이홍"]);
   });  
 
   it('철흑클', () => {
