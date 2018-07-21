@@ -44,10 +44,15 @@
   margin-bottom: 10px;
   resize: none;
   border: 1px black solid;
+  line-height: 1.2;
   display: inline-block;
-  vertical-align: top;
   text-align: left;
   min-height: 50px;
+  vertical-align: top;
+}
+
+.text-area * {
+  vertical-align: top;
 }
 
 textarea.text-area {

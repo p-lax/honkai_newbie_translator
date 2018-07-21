@@ -34,42 +34,47 @@ class EquipComponent extends Component {
   }
 
   textDetail(item) {
+    let makeBr = (txt) => txt.split(" / ").map((item, key) => {
+      return (<span key={key}>{item}<br/>&nbsp;&nbsp;</span>);
+    })
+
     // console.log(item);
+
     if(item && ((item.s && (item.s[0].oName || item.s[1].oName || item.s[2].oName )  ) || (item.w && item.w.oName))){
       return (
         <span>
           <br/><span>------------------------</span><br/>
           {
             item.w.skill?(
-              <span>액티브: {item.w.skill}<br/><br/></span>
+              <font color="#888888">액티브: {makeBr(item.w.skill)}<br/></font>
             ):(
               null
             )
           }
           {
             item.w.passive?(
-              <span>- {item.w.passive}<br/><br/></span>
+              <font color="#888888">무기: {makeBr(item.w.passive)}<br/></font>
             ):(
               null
             )
           }
           {
             item.s[0].texts[0]?(
-              <span>- {item.s[0].texts[0]}<br/></span>
+              <font color="#888888">상단: {makeBr(item.s[0].texts[0])}<br/></font>
             ):(
               null
             )
           }
           {
             item.s[1].texts[1]?(
-              <span>- {item.s[1].texts[1]}<br/></span>
+              <font color="#888888">중단: {makeBr(item.s[1].texts[1])}<br/></font>
             ):(
               null
             )
           }
           {
             item.s[2].texts[2]?(
-              <span>- {item.s[2].texts[2]}<br/></span>
+              <font color="#888888">하단: {makeBr(item.s[2].texts[2])}<br/></font>
             ):(
               null
             )
@@ -77,9 +82,9 @@ class EquipComponent extends Component {
           {
             item.sSet?(
               item.sSet.length>1?(
-                <span><br/>- {item.sSet[0]}<br/>- {item.sSet[1]}<br/></span>
+                <font color="#888888"> {makeBr(item.sSet[0])}<br/>- {makeBr(item.sSet[1])}<br/></font>
               ):(
-                <span><br/>- {item.sSet[0]}<br/></span>
+                <font color="#888888"> {makeBr(item.sSet[0])}<br/></font>
               )
             ):(
               null

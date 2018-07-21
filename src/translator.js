@@ -2,6 +2,10 @@ import dataStigma from "./data/stigma.js"
 import dataWeapon from "./data/weapon.js"
 
 const Translator = (text) => {
+  let stigmaExceptionList = [].concat(Object.keys(dataStigma.exception));
+  let stigmaExceptionLen = stigmaExceptionList.length;
+  let stigmaExceptionResult;
+
   let stigmaTokenList = [].concat(Object.keys(dataStigma.token));
   let stigmaTokenLen = stigmaTokenList.length;
   let stigmaTokenResult = [];
@@ -12,16 +16,51 @@ const Translator = (text) => {
   let weaponTokenList = [].concat(Object.keys(dataWeapon.token));
   let weaponTokenLen = weaponTokenList.length;
   let weaponTokenResult = [];
-  let weaponFirst = [9999, null];
+  let weaponFirst = [-1, null];
   let checkDuplicate = {};
 
-  let i,j,k;
+  let i,j;
 
   let clearNotIndexedToken = (a) => a[0] !== -1;
-  let getTokenFromListWithResult = (a) => stigmaTokenList[stigmaTokenResult[a][1]];
+  let getTokenFromListWithResult = (a) => {
+    if(stigmaTokenResult[a][1] === -1) {
+      return stigmaTokenResult[a][2]
+    } else {
+      return stigmaTokenList[stigmaTokenResult[a][1]]
+    }
+  }
   let getStigmaFromTokenIndex = (a) => dataStigma[dataStigma.token[a]];
 
-  // 토큰 모두 검색
+  let result = {
+    w: dataWeapon["null"],
+    s: [
+      dataStigma["null"], dataStigma["null"], dataStigma["null"]
+    ]
+  };
+
+  // 예외토큰
+  for(i=0;i<stigmaExceptionLen;i++){
+    let index = text.indexOf(stigmaExceptionList[i])
+    if(index >= 0) stigmaExceptionResult = [stigmaExceptionList[i], dataStigma.exception[stigmaExceptionList[i]]]
+  }
+
+  if(stigmaExceptionResult) {
+    text = text.replace(stigmaExceptionResult[0], stigmaExceptionResult[1]);
+  }
+
+  // 무기토큰
+  for(i=0;i<weaponTokenLen;i++){
+    weaponTokenResult[i] = text.indexOf(weaponTokenList[i]);
+    if(weaponTokenResult[i] === -1) continue;
+    if((weaponFirst[0] >= 0 && weaponFirst[0] > weaponTokenResult[i]) || weaponFirst[0] === -1)
+      weaponFirst = [weaponTokenResult[i], -1, dataWeapon.token[weaponTokenList[i]]]
+  }
+  if(weaponFirst[1]){
+    result.hasItem = true;
+    result.w = dataWeapon[weaponFirst[2]];
+  }
+
+  // 성흔토큰 모두 검색
   for(i=0;i<stigmaTokenLen;i++){
     stigmaTokenResult[i] = text.indexOf(stigmaTokenList[i]);
   }
@@ -31,39 +70,55 @@ const Translator = (text) => {
     [text.indexOf("2"), 2], [text.indexOf("3"), 3]
   ].filter(clearNotIndexedToken).sort()
 
+  stigmaTokenResult = stigmaTokenResult.filter(clearNotIndexedToken);
 
-  // 겹치는 토큰 제거
+  // 동일분류 겹치는 토큰 제거
   stigmaTokenResult = stigmaTokenResult.map(
-      (a, k)=>{
-        if(a === -1) return [-1];
+    (a, k)=>{
+      if(a === -1) return [-1];
 
-        let stigma = getStigmaFromTokenIndex(stigmaTokenList[k]);
-        let index;
-        if(index = checkDuplicate[stigma.short]){
-          if(index[0] > a) {
-            checkDuplicate[stigma.short] = [a, stigma.short];
-          }
-          return [-1, 0];
-        } else {
-          let stigma = getStigmaFromTokenIndex(stigmaTokenList[k])
-          checkDuplicate[stigma.short] = [a, stigma.short];
-          return [a, k];
-        }
+      let stigma = getStigmaFromTokenIndex(stigmaTokenList[k]);
+      let index;
+
+      if(index = checkDuplicate[stigma.short]){
+        if(index[0] > a)
+          checkDuplicate[stigma.short] = [a, k, stigmaTokenList[k]];
+        else if (index[0] === a && checkDuplicate[stigma.short][2].length < stigmaTokenList[k].length)
+          checkDuplicate[stigma.short] = [a, k, stigmaTokenList[k]];
+
+        return [-1, 0];
+      } else {
+        let stigma = getStigmaFromTokenIndex(stigmaTokenList[k])
+        checkDuplicate[stigma.short] = [a, k, stigmaTokenList[k]];
+        return [a, k];
       }
-    ).filter(clearNotIndexedToken);
+    }
+  );
 
+  stigmaTokenResult = []
+  if(weaponFirst[0] !== -1){
+    stigmaTokenResult.push(weaponFirst);
+  }
+  for(i in checkDuplicate){
+    stigmaTokenResult.push(checkDuplicate[i]);
+  }
+
+  // console.log(stigmaTokenResult, checkDuplicate);
+  // console.log(stigmaTokenResult.map((a)=>[a[0], stigmaTokenList[a[1]]]))
+
+  // 다중 토큰사용 감지
   for(i=0;i<stigmaTokenResult.length;i++){
-    var key = stigmaTokenList[stigmaTokenResult[i][1]];
-    var tokenResultRe = text.indexOf(key, stigmaTokenResult[i][0]+1);
+    let key = stigmaTokenList[stigmaTokenResult[i][1]];
+    let tokenResultRe = text.indexOf(key, stigmaTokenResult[i][0]+1);
     while(tokenResultRe >= 0){
       stigmaTokenResult.push([tokenResultRe, stigmaTokenResult[i][1]]);
       tokenResultRe = text.indexOf(key, tokenResultRe+1);
     }
   }
 
-
   let tokenDuplicateCheck = [];
 
+  // 토큰끼리 겹치지않게
   for(i=0;i<stigmaTokenResult.length;i++){
     let tokenText = getTokenFromListWithResult(i);
     let tokenIndex = stigmaTokenResult[i][0];
@@ -71,11 +126,15 @@ const Translator = (text) => {
     for(j=0;j<tokenText.length;j++) {
       if(tokenDuplicateCheck[j + tokenIndex] >= 0){
         let otherText = getTokenFromListWithResult(tokenDuplicateCheck[j + tokenIndex]);
-        let otherIndex = stigmaTokenResult[tokenDuplicateCheck[j + tokenIndex]][0];
+        // let otherIndex = stigmaTokenResult[tokenDuplicateCheck[j + tokenIndex]][0];
 
         if(tokenText.length > otherText.length){
+          // 긴쪽이 작은쪽을 덮음
           stigmaTokenResult[tokenDuplicateCheck[j + tokenIndex]][0] = -1;
           tokenDuplicateCheck[j + tokenIndex] = i;
+        } else {
+          // 못덮으면 내가죽음
+          stigmaTokenResult[i][0] = -1;
         }
       } else {
         tokenDuplicateCheck[j + tokenIndex] = i;
@@ -83,25 +142,11 @@ const Translator = (text) => {
     }
   }
 
-  stigmaTokenResult = stigmaTokenResult.filter(clearNotIndexedToken).sort((a, b) => a[0] - b[0]);
+  // console.log(tokenDuplicateCheck);
 
-  for(i=0;i<weaponTokenLen;i++){
-    weaponTokenResult[i] = text.indexOf(weaponTokenList[i]);
-    if(weaponTokenResult[i] === -1) continue;
-    if(weaponFirst[0] > weaponTokenResult[i])
-      weaponFirst = [weaponTokenResult[i], dataWeapon.token[weaponTokenList[i]]]
-  }
-
-  var result = {
-    w: dataWeapon["null"],
-    s: [
-      dataStigma["null"], dataStigma["null"], dataStigma["null"]
-    ]
-  };
-
-  if(weaponFirst[1]){
-    result.w = dataWeapon[weaponFirst[1]];
-  }
+  stigmaTokenResult = stigmaTokenResult.filter(clearNotIndexedToken)
+    .filter((a) => a[1] !== -1)
+    .sort((a, b) => a[0] - b[0]);
 
   let checkSet = {};
   let stigmaResultObject = { specific: [] , ready: [] };
@@ -188,14 +233,29 @@ const Translator = (text) => {
     result.s[1] = stigmaResultObject.ready[0];
     result.s[2] = stigmaResultObject.ready[0];
     checkSet[result.s[0].short] = 3;
+    result.hasItem = true;
   } else {
-    if(stigmaResultObject.specific[0]) result.s[0] = stigmaResultObject.specific[0];
-    if(stigmaResultObject.specific[1]) result.s[1] = stigmaResultObject.specific[1];
-    if(stigmaResultObject.specific[2]) result.s[2] = stigmaResultObject.specific[2];
+    let saveStigmaSpecific = (tIndex) => {
+      if(stigmaResultObject.specific[tIndex]) {
+        result.hasItem = true;
+        result.s[tIndex] = stigmaResultObject.specific[tIndex];
+      }
+    }
 
-    if(!result.s[0].oName && stigmaResultObject.ready[0]) result.s[0] = stigmaResultObject.ready.splice(0, 1)[0];
-    if(!result.s[1].oName && stigmaResultObject.ready[0]) result.s[1] = stigmaResultObject.ready.splice(0, 1)[0];
-    if(!result.s[2].oName && stigmaResultObject.ready[0]) result.s[2] = stigmaResultObject.ready.splice(0, 1)[0];
+    let saveStigmaResult = (tIndex) => {
+      if(!result.s[tIndex].oName && stigmaResultObject.ready[0]) {
+        result.hasItem = true;
+        result.s[tIndex] = stigmaResultObject.ready.splice(0, 1)[0];
+      }
+    }
+
+    saveStigmaSpecific(0);
+    saveStigmaSpecific(1);
+    saveStigmaSpecific(2);
+
+    saveStigmaResult(0);
+    saveStigmaResult(1);
+    saveStigmaResult(2);
 
     checkSet[result.s[0].short] = checkSet[result.s[0].short]?checkSet[result.s[0].short]+1:1;
     checkSet[result.s[1].short] = checkSet[result.s[1].short]?checkSet[result.s[1].short]+1:1;
@@ -208,33 +268,22 @@ const Translator = (text) => {
   for(i=0;i<len;i++){
     var x = Object.keys(checkSet)[i];
     if(checkSet[x] >= 3 && dataStigma[x]){
-      result.sSet = [
-        dataStigma[x].oName + " 2세트 : " + dataStigma[x].setTexts[0],
-        dataStigma[x].oName + " 3세트 : " + dataStigma[x].setTexts[1]
-      ]
+      if(dataStigma[x].setTexts[1]){
+        result.sSet = [
+          dataStigma[x].oName + " 2세트 : " + dataStigma[x].setTexts[0],
+          dataStigma[x].oName + " 3세트 : " + dataStigma[x].setTexts[1]
+        ]        
+      } else {
+        result.sSet = [
+          dataStigma[x].oName + " 2세트 : " + dataStigma[x].setTexts[0]
+        ]        
+      }
     } else if(checkSet[x] >= 2 && dataStigma[x]){
       result.sSet = [
         dataStigma[x].oName + " 2세트 : " + dataStigma[x].setTexts[0]
       ];
     }
   }
-
-  // console.log(stigmaTokenResult, weaponTokenResult, weaponFirst, result.w);
-
-  // {
-  //   // w: dataWeapon["써드"],
-  //   // s: [
-  //   //   dataStigma["미켈"],
-  //   //   dataStigma["막스"],
-  //   //   dataStigma["미켈"]
-  //   // ]
-  //   w: dataWeapon["후부키"],
-  //   s: [
-  //     dataStigma["시린"],
-  //     dataStigma["막스"],
-  //     dataStigma["시린"]
-  //   ]
-  // }
 
   return result
 }
