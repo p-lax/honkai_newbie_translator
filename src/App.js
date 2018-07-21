@@ -8,7 +8,6 @@ class App extends Component {
   constructor(props) {
     super(props);
     this.state = {value: ''};
-
     this.handleChange = this.handleChange.bind(this);
   }
 
@@ -23,6 +22,7 @@ class App extends Component {
       <ul>4성성흔 (단일성흔, 한섭에 없는 성흔 제외)</ul>
       <ul>3성성흔 조금 (바톨, 아틸, 왕소군, 테슬라, 롤랑, 샤를, 리날도)</ul>
       <ul>스타일링 테스트용 무기 (써드, 후부키)</ul>
+      <br/>
       <span>- 다음에 적용될 내용</span>
       <ul>4성성흔 (단일성흔, 한섭에 없는 성흔)</ul>
       <ul>3성성흔</ul>
@@ -41,14 +41,10 @@ class App extends Component {
   }
 
   makeHtml(data) {
-    // 성흔폼
-    // 상단
-
-    if(!!!data || !!!data.hasItem ) return this.notice();
-
-    return <div>
-      <EquipComponent value={data} />
-    </div>
+    if(!!!data || !!!data.hasItem ){
+      return this.notice();
+    } 
+    return (<div><EquipComponent value={data} /></div>);
   }
 
   render() {

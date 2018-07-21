@@ -266,9 +266,9 @@ const Translator = (text) => {
     delete checkSet.null;
   }
 
-  var len = Object.keys(checkSet).length;
+  let len = Object.keys(checkSet).length;
   for(i=0;i<len;i++){
-    var x = Object.keys(checkSet)[i];
+    let x = Object.keys(checkSet)[i];
     if(checkSet[x] >= 3 && dataStigma[x]){
       if(dataStigma[x].setTexts[1]){
         result.sSet = [

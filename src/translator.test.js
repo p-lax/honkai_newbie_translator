@@ -1,10 +1,10 @@
 import Translator from './translator.js'
 
 describe('Translator 테스트', () =>{
-  var checkUpName = (obj) => obj.s[0].oName
-  var checkMdName = (obj) => obj.s[1].oName
-  var checkDnName = (obj) => obj.s[2].oName
-  var checkStigmaName = (obj) => [obj.s[0].short, obj.s[1].short, obj.s[2].short];
+  let checkUpName = (obj) => obj.s[0].oName
+  let checkMdName = (obj) => obj.s[1].oName
+  let checkDnName = (obj) => obj.s[2].oName
+  let checkStigmaName = (obj) => [obj.s[0].short, obj.s[1].short, obj.s[2].short];
 
   it('미켈', () => {
     let res = Translator("미켈");

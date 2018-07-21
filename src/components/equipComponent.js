@@ -97,30 +97,30 @@ class EquipComponent extends Component {
   }
 
   render() {
-    var item = this.state.value;
+    let item = this.state.value;
     if(!item) return <div />;
 
-    var weapon = item.w;
-    var stigma = item.s;
+    let weapon = item.w;
+    let stigma = item.s;
 
-    var stigmaHeadText = "" + stigma[0].one + stigma[1].one + stigma[2].one;
+    let stigmaHeadText = "" + stigma[0].one + stigma[1].one + stigma[2].one;
 
     if(stigma[0].one && (stigma[0].one === stigma[1].one) && (stigma[1].one === stigma[2].one)){
       stigmaHeadText = "" + stigma[1].oName + " 3셋"
     }
 
-    var weaponText = "";
+    let weaponText = "";
 
     if(weapon.oName && weapon.type)
       weaponText = "무기: " + weapon.oName + " ("+ weapon.type + ")"
 
-    var stigmaText = [[stigma[0].oName, "上"], [stigma[1].oName, "中"], [stigma[2].oName, "下"]];
+    let stigmaText = [[stigma[0].oName, "上"], [stigma[1].oName, "中"], [stigma[2].oName, "下"]];
     stigmaText = stigmaText.filter((a)=>!!a[0]).map((a)=>a.join(" ")).join(" / ");
 
     if(stigmaText)
       stigmaText = "성흔: " + stigmaText;
 
-    var headText = ""
+    let headText = ""
     if(weapon.short || stigmaHeadText)
       headText = "- " + [weapon.short, stigmaHeadText].filter((a)=>!!a).join(" ");
 
