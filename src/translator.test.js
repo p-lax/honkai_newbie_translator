@@ -43,6 +43,10 @@ describe('Translator 테스트', () =>{
     let res = Translator("후");
     expect(checkStigmaName(res)).toEqual([undefined, undefined, "오만"]);
   });
+  it('분노', () => {
+    let res = Translator("분노");
+    expect(checkStigmaName(res)).toEqual([undefined, "메이분노", undefined]);
+  });
   it('후후', () => {
     let res = Translator("후후");
     expect(checkStigmaName(res)).toEqual([undefined, undefined, undefined]);
