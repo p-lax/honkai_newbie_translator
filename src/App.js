@@ -9,7 +9,7 @@ class App extends Component {
     super(props);
     this.state = {value: ''};
     this.handleChange = this.handleChange.bind(this);
-    this.version = "beta 1.0.1"
+    this.version = "beta 1.0.2"
   }
 
   handleChange(event) {

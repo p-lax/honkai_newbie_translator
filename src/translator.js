@@ -257,12 +257,17 @@ const Translator = (text) => {
   // console.log(text);
 
   if(stigmaResultObject.ready.length === 1 && stigmaResultObject.specific.length === 0) {
-    // 단일 성흔
-    result.s[0] = stigmaResultObject.ready[0];
-    result.s[1] = stigmaResultObject.ready[0];
-    result.s[2] = stigmaResultObject.ready[0];
-    checkSet[result.s[0].short] = 3;
-    result.hasItem = true;
+    if(stigmaResultObject.ready[0].isSingle){
+      result.s[stigmaResultObject.ready[0].singlePos] = stigmaResultObject.ready[0];
+      checkSet[result.s[0].short] = 1;
+      result.hasItem = true;
+    } else {
+      result.s[0] = stigmaResultObject.ready[0];
+      result.s[1] = stigmaResultObject.ready[0];
+      result.s[2] = stigmaResultObject.ready[0];
+      checkSet[result.s[0].short] = 3;
+      result.hasItem = true;
+    }
   } else {
     let saveStigmaSpecific = (tIndex) => {
       if(stigmaResultObject.specific[tIndex]) {
@@ -272,7 +277,16 @@ const Translator = (text) => {
     }
 
     let saveStigmaResult = (tIndex) => {
-      if(!result.s[tIndex].oName && stigmaResultObject.ready[0]) {
+      while(stigmaResultObject.ready[0] && stigmaResultObject.ready[0].isSingle){
+        let sPos = stigmaResultObject.ready[0].singlePos;
+        let sItem = stigmaResultObject.ready.splice(0, 1)[0];
+        if(result.s[sPos].isNull && tIndex === sPos) {
+          stigmaResultObject.specific[sPos] = sItem;
+          saveStigmaSpecific(sPos);
+        }
+      }
+
+      if(result.s[tIndex].isNull && stigmaResultObject.ready[0]) {
         result.hasItem = true;
         result.s[tIndex] = stigmaResultObject.ready.splice(0, 1)[0];
       }

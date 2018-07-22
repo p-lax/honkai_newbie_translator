@@ -38,6 +38,20 @@ describe('Translator 테스트', () =>{
     expect(checkStigmaName(res)).toEqual([undefined, undefined, "호무"]);
   });
 
+  // 단일성흔
+  it('후', () => {
+    let res = Translator("후");
+    expect(checkStigmaName(res)).toEqual([undefined, undefined, "오만"]);
+  });
+  it('후후', () => {
+    let res = Translator("후후");
+    expect(checkStigmaName(res)).toEqual([undefined, undefined, undefined]);
+  });
+  it('정막후', () => {
+    let res = Translator("정막후");
+    expect(checkStigmaName(res)).toEqual(["정위", "막스", "오만"]);
+  });
+
   // 테케클
   // 테리클
   // 테리리
@@ -355,6 +369,11 @@ describe('Translator 테스트', () =>{
   it('테수뉴', () => {
     let res = Translator("테수뉴");
     expect(checkStigmaName(res)).toEqual(["테밴", "수영복", "뉴턴"]);
+  });
+
+  it('철기뉴', () => {
+    let res = Translator("철기뉴");
+    expect(checkStigmaName(res)).toEqual(["슈뢰딩거", "기원", "뉴턴"]);
   });
 
 
