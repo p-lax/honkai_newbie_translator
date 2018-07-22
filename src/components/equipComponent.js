@@ -35,42 +35,76 @@ class EquipComponent extends Component {
   }
 
   textDetail(item) {
-    let makeBr = (txt) => txt.split(" / ").map((item, key) => {
-      return (<span key={key}>{item}<br/>&nbsp;&nbsp;</span>);
-    })
+    let reactKeyIndex = 0;
+
+    let makeBr = (txt) => {
+      let res = txt.split(" / ").map((item, key) => {
+        return ([<span key={key}>{item}&nbsp;&nbsp;</span>, <br key={key + 'br'}/>]);
+      })
+      res[res.length - 1][1] = null;
+
+      return res;
+    }
+
+    let makeKey = () => "textDetail" + (reactKeyIndex += 1)
 
     // console.log(item);
 
     if(item && ((item.s && (item.s[0].oName || item.s[1].oName || item.s[2].oName )  ) || (item.w && item.w.oName))){
-      return (
-        <span>
-          <br/><span>------------------------</span><br/>
-          {item.w.skill?(<font color="#888888">액티브: {makeBr(item.w.skill)}</font>):(null)}
-          {item.w.skill?(<br/>):(null)}
-          {item.w.passive?(<font color="#888888">액티브: {makeBr(item.w.skill)}</font>):(null)}
-          {item.w.passive?(<br/>):(null)}
-          {item.s[0].texts[0]?(<font color="#888888">상단: {makeBr(item.s[0].texts[0])}</font>):(null)}
-          {item.s[0].texts[0]?(<br/>):(null)}
-          {item.s[1].texts[1]?(<font color="#888888">중단: {makeBr(item.s[1].texts[1])}</font>):(null)}
-          {item.s[1].texts[1]?(<br/>):(null)}
-          {item.s[2].texts[2]?(<font color="#888888">하단: {makeBr(item.s[2].texts[2])}</font>):(null)}
-          {item.s[2].texts[2]?(<br/>):(null)}
-          {
-            item.sSet?(
-              item.sSet.length>1?(
-                <font color="#888888">- {makeBr(item.sSet[0])}<br/>- {makeBr(item.sSet[1])}</font>
-              ):(
-                <font color="#888888">- {makeBr(item.sSet[0])}</font>
-              )
-            ):(
-              null
-            )
-          }
-          {item.sSet?(<br/>):(null)}
-        </span>
-      )
+      return ([
+        <br key={makeKey()} />,
+        <span key={makeKey()}>------------------------</span>,
+        <br key={makeKey()} />,
+        item.w.skill?(
+          [
+            <font key={makeKey()} color="#888888">액티브: {makeBr(item.w.skill)}</font>,
+            " ", <br key={makeKey()} />, <br key={makeKey()} />,
+          ]
+        ):(null),
+        item.w.passive?(
+          [
+            <font key={makeKey()} color="#888888">무기: {makeBr(item.w.passive)}</font>,
+            " ", <br key={makeKey()} />, <br key={makeKey()} />,
+          ]
+        ):(null),
+        item.s[0].texts[0]?(
+          [
+            <font key={makeKey()} color="#888888">상단: {makeBr(item.s[0].texts[0])}</font>,
+            " ", <br key={makeKey()} />, <br key={makeKey()} />,
+          ]
+        ):(null),
+        item.s[1].texts[1]?(
+          [
+            <font key={makeKey()} color="#888888">중단: {makeBr(item.s[1].texts[1])}</font>,
+            " ", <br key={makeKey()} />, <br key={makeKey()} />,
+          ]
+        ):(null),
+        item.s[2].texts[2]?(
+          [
+            <font key={makeKey()} color="#888888">하단: {makeBr(item.s[2].texts[2])}</font>,
+            " ", <br key={makeKey()} />, <br key={makeKey()} />,
+          ]
+        ):(null),
+        item.sSet?(
+          item.sSet.length>1?(
+            [
+              <font key={makeKey()} color="#888888">- {makeBr(item.sSet[0])}</font>,
+              " ", <br key={makeKey()} />, <br key={makeKey()} />,
+              <font key={makeKey()} color="#888888">- {makeBr(item.sSet[1])}</font>,
+              " ", <br key={makeKey()} />, <br key={makeKey()} />,
+            ]
+          ):(
+            [
+              <font color="#888888">- {makeBr(item.sSet[0])}</font>,
+              " ", <br key={makeKey()} />, <br key={makeKey()} />,
+            ]
+          )
+        ):(null)
+      ]);
     }
   }
+
+
 
   render() {
     let item = this.state.value;
