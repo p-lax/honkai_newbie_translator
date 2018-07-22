@@ -65,11 +65,14 @@ const Translator = (text) => {
     stigmaTokenResult[i] = text.indexOf(stigmaTokenList[i]);
   }
 
-  positionTokenResult = [
-    [text.indexOf("상"), "상"], [text.indexOf("중"), "중"], [text.indexOf("하"), "하"], 
-    [text.indexOf("2"), 2], [text.indexOf("3"), 3]
-  ].filter(clearNotIndexedToken).sort()
+  let setPositionTokens = () => {
+    return [
+      [text.indexOf("상"), "상"], [text.indexOf("중"), "중"], [text.indexOf("하"), "하"],
+      [text.indexOf("2"), 2], [text.indexOf("3"), 3]
+    ].filter(clearNotIndexedToken).sort()
+  }
 
+  positionTokenResult = setPositionTokens();
   stigmaTokenResult = stigmaTokenResult.filter(clearNotIndexedToken);
 
   // 동일분류 겹치는 토큰 제거
@@ -160,13 +163,34 @@ const Translator = (text) => {
 
       let isPositionTokenValid = () => {
         nowPositionToken = positionTokenResult[positionTokenIndex];
-        return nowPositionToken && (next > nowPositionToken[0] || !next)    
+        return nowPositionToken && (next > nowPositionToken[0] || !next)
       }
 
       let setSpecificStigma = (prev, depth) => {
         nowPositionToken = positionTokenResult[positionTokenIndex];
-        // console.log(nowPositionToken, dataStigma[dataStigma.token[stigmaTokenList[now]]]);
+        // 현재 토큰 내부에 포지션토큰이 존재
+        let checkPositionTokenWhitinNowToken = () => {
+          if (nowPositionToken && nowPos >= nowPositionToken[0] &&
+              nowPos + stigmaTokenList[now].length - 1 <= nowPositionToken[0] + nowPositionToken[1].length)
+            return true
+          else
+            return false
+        }
 
+        while(checkPositionTokenWhitinNowToken()){
+          let newPosition = text.indexOf(nowPositionToken[1], nowPositionToken[0]+1);
+          if(newPosition !== -1){
+            positionTokenResult.push([newPosition, nowPositionToken[1]]);
+            positionTokenResult = positionTokenResult.sort();
+          }
+
+          positionTokenIndex += 1;
+          nowPositionToken = positionTokenResult[positionTokenIndex];
+        }
+
+        if(!nowPositionToken) return 1;
+
+        // console.log(nowPositionToken, dataStigma[dataStigma.token[stigmaTokenList[now]]]);
         // console.log(JSON.stringify([nowPos, next, nowPositionToken, prev]));
 
         if (prev === -1 && nowPos < nowPositionToken[0]) return
@@ -215,10 +239,13 @@ const Translator = (text) => {
 
       if(isPositionTokenValid()){
         // 부위토큰 존재
-        setSpecificStigma(0, 0);
+        if(setSpecificStigma(0, 0)){
+          // 포지션토큰 겹침문제로 자유토큰으로 변환
+          stigmaResultObject.ready.push(dataStigma[dataStigma.token[stigmaTokenList[now]]]);
+        }
       } else {
         // 부위토큰 미존재 (채워넣는 토큰)
-        stigmaResultObject.ready.push(dataStigma[dataStigma.token[stigmaTokenList[now]]]);        
+        stigmaResultObject.ready.push(dataStigma[dataStigma.token[stigmaTokenList[now]]]);
       }
     }
   }
@@ -274,11 +301,11 @@ const Translator = (text) => {
         result.sSet = [
           dataStigma[x].oName + " 2세트 : " + dataStigma[x].setTexts[0],
           dataStigma[x].oName + " 3세트 : " + dataStigma[x].setTexts[1]
-        ]        
+        ]
       } else {
         result.sSet = [
           dataStigma[x].oName + " 2세트 : " + dataStigma[x].setTexts[0]
-        ]        
+        ]
       }
     } else if(checkSet[x] >= 2 && dataStigma[x]){
       result.sSet = [

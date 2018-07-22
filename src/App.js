@@ -9,6 +9,7 @@ class App extends Component {
     super(props);
     this.state = {value: ''};
     this.handleChange = this.handleChange.bind(this);
+    this.version = "beta 1.0.1"
   }
 
   handleChange(event) {
@@ -19,13 +20,11 @@ class App extends Component {
     return (<div><font size="2">
       <span>아직 개발중인 버전이므로, 많은 문제가 있을 수 있음.</span><br/><br/>
       <span>- 적용된 내용</span>
-      <ul>4성성흔 (단일성흔, 한섭에 없는 성흔 제외)</ul>
-      <ul>3성성흔 조금 (바톨, 아틸, 왕소군, 테슬라, 롤랑, 샤를, 리날도)</ul>
+      <ul>단일성흔 제외한 3성, 4성 성흔</ul>
       <ul>스타일링 테스트용 무기 (써드, 후부키)</ul>
       <br/>
       <span>- 다음에 적용될 내용</span>
-      <ul>4성성흔 (단일성흔, 한섭에 없는 성흔)</ul>
-      <ul>3성성흔</ul>
+      <ul>3성, 4성 단일성흔</ul>
       <ul>무기</ul>
       <ul>발키리 이름</ul>
       <br/>
@@ -43,7 +42,7 @@ class App extends Component {
   makeHtml(data) {
     if(!!!data || !!!data.hasItem ){
       return this.notice();
-    } 
+    }
     return (<div><EquipComponent value={data} /></div>);
   }
 
@@ -52,11 +51,11 @@ class App extends Component {
       <div className="App">
         <header className="App-header">
           <h1 className="App-title"><i className="main_icon"></i>키갤 장비성흔 번역기</h1>
-          <div className="versiontag">beta 1.0</div>
+          <div className="versiontag">{this.version}</div>
         </header>
         <div className="App-intro container">
           <div className="row">
-            <div className="col-sm">
+            <div className="col-sm noselect">
               <textarea className="text-area" value={this.state.value} onChange={this.handleChange}
                 placeholder="성흔,장비 약자를 입력 (예: 미막미 후붘)" />
             </div>

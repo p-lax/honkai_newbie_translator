@@ -9,7 +9,7 @@ describe('Translator 테스트', () =>{
   it('미켈', () => {
     let res = Translator("미켈");
     expect(checkStigmaName(res)).toEqual(["미켈", "미켈", "미켈"]);
-  });  
+  });
 
   // 예외처리
   it('철막이 후부키', () => {
@@ -25,6 +25,17 @@ describe('Translator 테스트', () =>{
   it('아이작 뉴턴', () => {
     let res = Translator("아이작 뉴턴");
     expect(checkStigmaName(res)).toEqual(["뉴턴", "뉴턴", "뉴턴"]);
+  });
+
+  // 이름에 상중하 토큰이 들어가는것들
+  it('하임', () => {
+    let res = Translator("하임");
+    expect(checkStigmaName(res)).toEqual(["호무", "호무", "호무"]);
+  });
+
+  it('하임 하', () => {
+    let res = Translator("하임 하");
+    expect(checkStigmaName(res)).toEqual([undefined, undefined, "호무"]);
   });
 
   // 테케클
@@ -67,21 +78,27 @@ describe('Translator 테스트', () =>{
   it('롤흑흑', () => {
     let res = Translator("롤흑흑");
     expect(checkStigmaName(res)).toEqual(["롤랑", "흑헌원", "흑헌원"]);
-  });  
+  });
 
   it('롤피피', () => {
     let res = Translator("롤피피");
     expect(checkStigmaName(res)).toEqual(["롤랑", "피카소", "피카소"]);
-  });  
+  });
+
+  it('롤이이', () => {
+    let res = Translator("롤이이");
+    expect(checkStigmaName(res)).toEqual(["롤랑", "이홍", "이홍"]);
+  });
 
   it('롤샤리', () => {
     let res = Translator("롤샤리");
     expect(checkStigmaName(res)).toEqual(["롤랑", "샤를", "리날도"]);
-  });  
+  });
 
 
   // 원소딜러들
 
+  // 전기딜러
   it('섹수뉴', () => {
     let res = Translator("섹수뉴");
     expect(checkStigmaName(res)).toEqual(["셰익", "수영복", "뉴턴"]);
@@ -100,41 +117,6 @@ describe('Translator 테스트', () =>{
   it('테밴풀셋', () => {
     let res = Translator("테밴풀셋");
     expect(checkStigmaName(res)).toEqual(["테밴", "테밴", "테밴"]);
-  });
-
-  it('철수 수메 세익', () => {
-    let res = Translator("철수 수메 세익");
-    expect(checkStigmaName(res)).toEqual(["슈뢰딩거", "수영복", "셰익"]);
-  });  
-
-  it('철수섹', () => {
-    let res = Translator("철수섹");
-    expect(checkStigmaName(res)).toEqual(["슈뢰딩거", "수영복", "셰익"]);
-  });  
-
-  it('비여비', () => {
-    let res = Translator("비여비");
-    expect(checkStigmaName(res)).toEqual(["비옥환", "여와", "비옥환"]);
-  });  
-
-  it('비섹비', () => {
-    let res = Translator("비섹비");
-    expect(checkStigmaName(res)).toEqual(["비옥환", "셰익", "비옥환"]);
-  });  
-
-  it('이여이', () => {
-    let res = Translator("이여이");
-    expect(checkStigmaName(res)).toEqual(["이홍", "여와", "이홍"]);
-  });  
-
-  it('농3', () => {
-    let res = Translator("농3");
-    expect(checkStigmaName(res)).toEqual(["노히메", "노히메", "노히메"]);
-  });  
-
-  it('철수뉴', () => {
-    let res = Translator("철수뉴");
-    expect(checkStigmaName(res)).toEqual(["슈뢰딩거", "수영복", "뉴턴"]);
   });
 
   it('섹수클', () => {
@@ -188,27 +170,71 @@ describe('Translator 테스트', () =>{
   });
 
 
+  // 빙결딜러
+  it('철수 수메 세익', () => {
+    let res = Translator("철수 수메 세익");
+    expect(checkStigmaName(res)).toEqual(["슈뢰딩거", "수영복", "셰익"]);
+  });
+
+  it('철수섹', () => {
+    let res = Translator("철수섹");
+    expect(checkStigmaName(res)).toEqual(["슈뢰딩거", "수영복", "셰익"]);
+  });
+
+  it('철테섹', () => {
+    let res = Translator("철테섹");
+    expect(checkStigmaName(res)).toEqual(["슈뢰딩거", "테슬라", "셰익"]);
+  });
+
+  it('철수뉴', () => {
+    let res = Translator("철수뉴");
+    expect(checkStigmaName(res)).toEqual(["슈뢰딩거", "수영복", "뉴턴"]);
+  });
+
+  it('농3', () => {
+    let res = Translator("농3");
+    expect(checkStigmaName(res)).toEqual(["노히메", "노히메", "노히메"]);
+  });
+
+  // 화염딜러
+  it('비여비', () => {
+    let res = Translator("비여비");
+    expect(checkStigmaName(res)).toEqual(["비옥환", "여와", "비옥환"]);
+  });
+
+  it('비섹비', () => {
+    let res = Translator("비섹비");
+    expect(checkStigmaName(res)).toEqual(["비옥환", "셰익", "비옥환"]);
+  });
+
+  it('이여이', () => {
+    let res = Translator("이여이");
+    expect(checkStigmaName(res)).toEqual(["이홍", "여와", "이홍"]);
+  });
+
+
+
   // 근거리 물리딜러들
 
   it('미막미', () => {
     let res = Translator("미막미");
     expect(checkStigmaName(res)).toEqual(["미켈", "막스", "미켈"]);
-  });  
+  });
 
   it('시막시', () => {
     let res = Translator("시막시");
     expect(checkStigmaName(res)).toEqual(["시린", "막스", "시린"]);
-  });  
+  });
 
   it('세실 풀셋', () => {
     let res = Translator("세실 풀셋");
     expect(checkStigmaName(res)).toEqual(["세실", "세실", "세실"]);
-  });  
+  });
 
   it('이막아', () => {
     let res = Translator("이막아");
     expect(checkStigmaName(res)).toEqual(["이홍", "막스", "아틸라"]);
-  });  
+  });
 
   it('이예아', () => {
     let res = Translator("이예아");
@@ -218,7 +244,7 @@ describe('Translator 테스트', () =>{
   it('예카테리나 풀셋', () => {
     let res = Translator("예카테리나 풀셋");
     expect(checkStigmaName(res)).toEqual(["예카", "예카", "예카"]);
-  });  
+  });
 
   it('케케클', () => {
     let res = Translator("케케클");
@@ -246,27 +272,27 @@ describe('Translator 테스트', () =>{
   it('철흑흑', () => {
     let res = Translator("철흑흑");
     expect(checkStigmaName(res)).toEqual(["슈뢰딩거", "흑헌원", "흑헌원"]);
-  });  
+  });
 
   it('철이이', () => {
     let res = Translator("철이이");
     expect(checkStigmaName(res)).toEqual(["슈뢰딩거", "이홍", "이홍"]);
-  });  
+  });
 
   it('철흑클', () => {
     let res = Translator("철흑클");
     expect(checkStigmaName(res)).toEqual(["슈뢰딩거", "흑헌원", "클레오"]);
-  });  
+  });
 
   it('철막클', () => {
     let res = Translator("철막클");
     expect(checkStigmaName(res)).toEqual(["슈뢰딩거", "막스", "클레오"]);
-  });  
+  });
 
   it('철막막', () => {
     let res = Translator("철막막");
     expect(checkStigmaName(res)).toEqual(["슈뢰딩거", "막스", "막스"]);
-  });  
+  });
 
   it('막스 풀셋', () => {
     let res = Translator("막스풀셋");
@@ -276,12 +302,12 @@ describe('Translator 테스트', () =>{
   it('플랑크 풀셋', () => {
     let res = Translator("플랑크풀셋");
     expect(checkStigmaName(res)).toEqual(["막스", "막스", "막스"]);
-  });  
+  });
 
   it('싱말 풀셋', () => {
     let res = Translator("싱말풀셋");
     expect(checkStigmaName(res)).toEqual(["신말", "신말", "신말"]);
-  });  
+  });
 
 
   // 서포터들
@@ -294,37 +320,37 @@ describe('Translator 테스트', () =>{
   it('흑흑철', () => {
     let res = Translator("흑흑철");
     expect(checkStigmaName(res)).toEqual(["흑헌원", "흑헌원", "슈뢰딩거"]);
-  });  
+  });
 
   it('클클클', () => {
     let res = Translator("클클클");
     expect(checkStigmaName(res)).toEqual(["클레오", "클레오", "클레오"]);
-  });  
+  });
 
   it('이지이', () => {
     let res = Translator("이지이");
     expect(checkStigmaName(res)).toEqual(["이홍", "지크", "이홍"]);
-  });  
+  });
 
   it('이샤롤', () => {
     let res = Translator("이샤롤");
     expect(checkStigmaName(res)).toEqual(["이이", "샤를", "롤랑"]);
-  });  
+  });
 
   it('예샤제', () => {
     let res = Translator("예샤제");
     expect(checkStigmaName(res)).toEqual(["예카", "샤를", "제갈"]);
-  });  
+  });
 
   it('오오뉴', () => {
     let res = Translator("오오뉴");
     expect(checkStigmaName(res)).toEqual(["오토", "오토", "뉴턴"]);
-  });  
+  });
 
   it('장장뉴', () => {
     let res = Translator("장장뉴");
     expect(checkStigmaName(res)).toEqual(["장광", "장광", "뉴턴"]);
-  });  
+  });
 
   it('테수뉴', () => {
     let res = Translator("테수뉴");

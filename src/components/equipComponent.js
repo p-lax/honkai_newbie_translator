@@ -29,7 +29,7 @@ class EquipComponent extends Component {
     if(urlKey) {
       // return <img src={"./img/"+type+"/" + urlKey + ".png"} alt={alt} />
       return <img src={"https://t1.daumcdn.net/cfile/tistory/" + urlKey} alt={alt} />
-    } else {      
+    } else {
       return <span />
     }
   }
@@ -83,7 +83,7 @@ class EquipComponent extends Component {
           {
             item.sSet?(
               item.sSet.length>1?(
-                <font color="#888888"> {makeBr(item.sSet[0])}<br/>- {makeBr(item.sSet[1])}<br/></font>
+                <font color="#888888">- {makeBr(item.sSet[0])}<br/>- {makeBr(item.sSet[1])}<br/></font>
               ):(
                 <font color="#888888"> {makeBr(item.sSet[0])}<br/></font>
               )
