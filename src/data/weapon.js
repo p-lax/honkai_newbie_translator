@@ -1,4 +1,9 @@
+import weapon_handgun from "./weapon_handgun.js"
+import weapon_gauntlet from "./weapon_gauntlet.js"
+
 const weapon = {
+    ...weapon_handgun.data,
+    ...weapon_gauntlet.data,
     "후부키": {
       "oName": "영도·사쿠라 후부키",
       "type": "태도",
@@ -17,6 +22,15 @@ const weapon = {
       "skill": "",
       "passive": "20, 50, 100콤보 이상일 때 각각 물리 대미지 20%, 30%, 40% 상승 / 폭발 상태에서 물리 대미지 30% 상승"
     },
+    "고주파절단도": {
+      "oName": "고주파 절단도",
+      "type": "태도",
+      "short": "고주파절단도",
+      "img": "9912FC3359B23B8A0E",
+      "spec": "공격 272 회심 38",
+      "skill": "[SP 소모 : 14][쿨타임 : 11초] / 타깃을 향해 순간 이동하여 작은 범위에 구속 역장을 건다. 역장에 구속된 적은 4초 동안 방어력이 80% 감소하고 0.4초마다 234의 전격 대미지를 받는다.",
+      "passive": "크리티컬 시 50.0% 확률로 타깃을 공중에 띄우고 3초간 시공 봉인 상태로 만든다. 쿨타임 6.00초"
+    },
     "null": {
       "oName": "",
       "type": "",
@@ -27,6 +41,8 @@ const weapon = {
       "passive": ""
     },
     "token": {
+      ...weapon_handgun.token,
+      ...weapon_gauntlet.token,
       "써드": "써드",
       "서드": "써드",
       "삼검": "써드",
@@ -34,6 +50,8 @@ const weapon = {
       "3RD": "써드",
       "후붘": "후부키",
       "후부키": "후부키",
+      "후붕큡": "후부키",
+      "*.*주파\\s*.*단도":"고주파절단도"
     }
   }
 

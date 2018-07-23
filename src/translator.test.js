@@ -56,6 +56,11 @@ describe('Translator 테스트', () =>{
     expect(checkStigmaName(res)).toEqual(["정위", "막스", "오만"]);
   });
 
+  it('폭식분노나태', () => {
+    let res = Translator("폭식분노나태");
+    expect(checkStigmaName(res)).toEqual(["폭식", "메이분노", "나태"]);
+  });
+
   // 테케클
   // 테리클
   // 테리리

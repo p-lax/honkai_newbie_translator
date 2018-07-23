@@ -1,6 +1,11 @@
 import dataStigma from "./data/stigma.js"
 import dataWeapon from "./data/weapon.js"
 
+window.dataWeapon = dataWeapon;
+
+const weaponTokenList = [].concat(Object.keys(dataWeapon.token));
+const weaponTokenLen = weaponTokenList.length;
+
 const Translator = (text) => {
   let stigmaExceptionList = [].concat(Object.keys(dataStigma.exception));
   let stigmaExceptionLen = stigmaExceptionList.length;
@@ -13,8 +18,6 @@ const Translator = (text) => {
   let positionTokenResult = [];
   let positionTokenIndex = 0;
 
-  let weaponTokenList = [].concat(Object.keys(dataWeapon.token));
-  let weaponTokenLen = weaponTokenList.length;
   let weaponTokenResult = [];
   let weaponFirst = [-1, null];
   let checkDuplicate = {};
@@ -50,7 +53,13 @@ const Translator = (text) => {
 
   // 무기토큰
   for(i=0;i<weaponTokenLen;i++){
-    weaponTokenResult[i] = text.indexOf(weaponTokenList[i]);
+    let token = weaponTokenList[i];
+    if(token[0] === "*"){
+      token = new RegExp(token.substr(1));
+      weaponTokenResult[i] = text.search(token);
+    } else {
+      weaponTokenResult[i] = text.indexOf(token);
+    }
     if(weaponTokenResult[i] === -1) continue;
     if((weaponFirst[0] >= 0 && weaponFirst[0] > weaponTokenResult[i]) || weaponFirst[0] === -1)
       weaponFirst = [weaponTokenResult[i], -1, dataWeapon.token[weaponTokenList[i]]]
@@ -283,6 +292,7 @@ const Translator = (text) => {
         if(result.s[sPos].isNull && tIndex === sPos) {
           stigmaResultObject.specific[sPos] = sItem;
           saveStigmaSpecific(sPos);
+          return;
         }
       }
 
