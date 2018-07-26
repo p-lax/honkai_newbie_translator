@@ -90,9 +90,9 @@ const Translator = (text) => {
       if(a === -1) return [-1];
 
       let stigma = getStigmaFromTokenIndex(stigmaTokenList[k]);
-      let index;
+      let index = checkDuplicate[stigma.short];
 
-      if(index = checkDuplicate[stigma.short]){
+      if(index){
         if(index[0] > a)
           checkDuplicate[stigma.short] = [a, k, stigmaTokenList[k]];
         else if (index[0] === a && checkDuplicate[stigma.short][2].length < stigmaTokenList[k].length)

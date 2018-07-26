@@ -4,6 +4,7 @@ const stigma3 = {
         "oName": "바토리",
         "one": "바",
         "short": "바톨",
+        "hairColor": "lightBrown",
         "imgs": ["232B0933597FDBC20E", "2497C433597FDBF704", "21C25E33597FDC2714"],
         "texts": [
           "HP80% 이상시, 방어력 31% 증가",
@@ -19,6 +20,7 @@ const stigma3 = {
         "oName": "왕소군",
         "one": "왕소군",
         "short": "왕소군",
+        "hairColor": "red",
         "imgs": ["27D1F733597FDBC814", "243B3C33597FDBFC3D", "25526D33597FDC2D0A"],
         "texts": [
           "전투중 HP상한 26% 증가",
@@ -34,6 +36,7 @@ const stigma3 = {
         "oName": "아틸라",
         "one": "아",
         "short": "아틸라",
+        "hairColor": "brown",
         "imgs": ["22698D33597FDBC609", "27720D33597FDC2B1A", "26200633597FDBFA0D"],
         "texts": [
           "10 콤보 이상시, 이동속도 15% 증가",
@@ -49,6 +52,7 @@ const stigma3 = {
         "oName": "사카모토 료마",
         "one": "료마",
         "short": "료마",
+        "hairColor": "lightBlue",
         "imgs": ["21D9B333597FDBC313", "25361633597FDBF74A", "270D7133597FDC280F"],
         "texts": [
           "충전 물리피해 18% 증가 (브로냐, 히메코의 차지공격)",
@@ -64,6 +68,7 @@ const stigma3 = {
         "oName": "테슬라",
         "one": "테",
         "short": "테슬라",
+        "hairColor": "red",
         "imgs": ["22E39233597FDBCC13", "21972D33597FDBFF17", "2544EB33597FDC301E"],
         "texts": [
           "마비 상태인 적에게 모든피해 51% 증가",
@@ -79,6 +84,7 @@ const stigma3 = {
         "oName": "헌원 물놀이",
         "one": "물놀이",
         "short": "물놀이",
+        "hairColor": "black",
         "imgs": ["22637633597FDBCC0A", "21A87833597FDC0016", "25ED8A33597FDC3111"],
         "texts": [
           "분기 물리피해 15% 증가",

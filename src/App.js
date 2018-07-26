@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import './App.css';
 import Translator from './translator.js'
 import EquipComponent from './components/equipComponent.js'
+import StigmaFinder from './components/stigmaFinder.js'
 import 'bootstrap/dist/css/bootstrap.css'
 
 class App extends Component {
@@ -48,6 +49,7 @@ class App extends Component {
 
   render() {
     return (
+      [
       <div className="App">
         <header className="App-header">
           <h1 className="App-title"><i className="main_icon"></i>키갤 장비성흔 번역기</h1>
@@ -68,7 +70,8 @@ class App extends Component {
             </div>
           </div>
         </div>
-      </div>
+      </div>,
+      ]
     );
   }
 }

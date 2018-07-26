@@ -1,59 +1,42 @@
 import weapon_handgun from "./weapon_handgun.js"
+import weapon_longsword from "./weapon_longsword.js"
 import weapon_gauntlet from "./weapon_gauntlet.js"
 
-const weapon = {
-    ...weapon_handgun.data,
-    ...weapon_gauntlet.data,
-    "후부키": {
-      "oName": "영도·사쿠라 후부키",
-      "type": "태도",
-      "short": "후부키",
-      "img": "99478F3359B23B8B03",
-      "spec": "공격 289 회심 29",
-      "skill": "[SP소모:15][쿨타임:12초] 전방으로 돌진하여 적에게 공격력의 400.0%인 물리피해를 주고, 비앵표식이 있는 적을 3.5초간 기절시킵니다,역신무녀 장비시, 맞은 적에게 비앵표식을 추가합니다.",
-      "passive": "공격시 100.0% 확률로 전방에 검기를 날려, 공격력의 200% + 1920의 물리피해를 줍니다, 검기의 쿨타임 4.8초 / 역신무녀 장비시, 검기에 맞은 적은 비앵스택을 하나 얻고, 인반 명중시, 검기의 쿨타임이 초기화 됩니다 / (비앵스택3개=비앵표식)"
-    },
-    "써드": {
-      "oName": "3rd 성유물",
-      "type": "태도",
-      "short": "써드",
-      "img": "99FCB13359B23B893E",
-      "spec": "공격 254 회심 59",
-      "skill": "",
-      "passive": "20, 50, 100콤보 이상일 때 각각 물리 대미지 20%, 30%, 40% 상승 / 폭발 상태에서 물리 대미지 30% 상승"
-    },
-    "고주파절단도": {
-      "oName": "고주파 절단도",
-      "type": "태도",
-      "short": "고주파절단도",
-      "img": "9912FC3359B23B8A0E",
-      "spec": "공격 272 회심 38",
-      "skill": "[SP 소모 : 14][쿨타임 : 11초] / 타깃을 향해 순간 이동하여 작은 범위에 구속 역장을 건다. 역장에 구속된 적은 4초 동안 방어력이 80% 감소하고 0.4초마다 234의 전격 대미지를 받는다.",
-      "passive": "크리티컬 시 50.0% 확률로 타깃을 공중에 띄우고 3초간 시공 봉인 상태로 만든다. 쿨타임 6.00초"
-    },
-    "null": {
-      "oName": "",
-      "type": "",
-      "short": "",
-      "img": "",
-      "spec": "",
-      "skill": "",
-      "passive": ""
-    },
-    "token": {
-      ...weapon_handgun.token,
-      ...weapon_gauntlet.token,
-      "써드": "써드",
-      "서드": "써드",
-      "삼검": "써드",
-      "3rd": "써드",
-      "3RD": "써드",
-      "후붘": "후부키",
-      "후부키": "후부키",
-      "후붕큡": "후부키",
-      "*.*주파\\s*.*단도":"고주파절단도"
+let parseRevToken = (input) => {
+  let i, j, keys = Object.keys(input), len = keys.length;
+  let result = {};
+
+  for (i=0;i<len;i+=1) {
+    let key = keys[i];
+    let list = input[key];
+    for (j=0;j<list.length;j+=1){
+      result[list[j]] = key;
     }
   }
+
+  return result;
+}
+
+const weapon = {
+  ...weapon_handgun.data,
+  ...weapon_longsword.data,
+  ...weapon_gauntlet.data,
+
+  "null": {
+    "oName": "",
+    "type": "",
+    "short": "",
+    "img": "",
+    "spec": "",
+    "skill": "",
+    "passive": ""
+  },
+  "token": {
+    ...weapon_handgun.token,
+    ...weapon_gauntlet.token,
+    ...parseRevToken(weapon_longsword.token_rev)
+  }
+}
 
 
 export default weapon

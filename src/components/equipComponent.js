@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import consts from '../data/const';
 
 class EquipComponent extends Component {
   constructor(props) {
@@ -28,7 +29,7 @@ class EquipComponent extends Component {
   makeImageTag(urlKey, type, alt) {
     if(urlKey) {
       // return <img src={"./img/"+type+"/" + urlKey + ".png"} alt={alt} />
-      return <img src={"https://t1.daumcdn.net/cfile/tistory/" + urlKey} alt={alt} />
+      return <img src={consts.imgDomain + "/" + type + "/" + urlKey + ".png"} alt={alt} />
     } else {
       return <span />
     }
