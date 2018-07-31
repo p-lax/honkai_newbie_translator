@@ -4,7 +4,7 @@ const stigma3 = {
         "oName": "바토리",
         "one": "바",
         "short": "바톨",
-        "hairColor": "lightBrown",
+        "hairColor": ["lightOrange"],
         "imgs": ["232B0933597FDBC20E", "2497C433597FDBF704", "21C25E33597FDC2714"],
         "texts": [
           "HP80% 이상시, 방어력 31% 증가",
@@ -20,7 +20,7 @@ const stigma3 = {
         "oName": "왕소군",
         "one": "왕소군",
         "short": "왕소군",
-        "hairColor": "red",
+        "hairColor": ["red"],
         "imgs": ["27D1F733597FDBC814", "243B3C33597FDBFC3D", "25526D33597FDC2D0A"],
         "texts": [
           "전투중 HP상한 26% 증가",
@@ -36,7 +36,7 @@ const stigma3 = {
         "oName": "아틸라",
         "one": "아",
         "short": "아틸라",
-        "hairColor": "brown",
+        "hairColor": ["brown"],
         "imgs": ["22698D33597FDBC609", "27720D33597FDC2B1A", "26200633597FDBFA0D"],
         "texts": [
           "10 콤보 이상시, 이동속도 15% 증가",
@@ -52,7 +52,7 @@ const stigma3 = {
         "oName": "사카모토 료마",
         "one": "료마",
         "short": "료마",
-        "hairColor": "lightBlue",
+        "hairColor": ["lightBlue"],
         "imgs": ["21D9B333597FDBC313", "25361633597FDBF74A", "270D7133597FDC280F"],
         "texts": [
           "충전 물리피해 18% 증가 (브로냐, 히메코의 차지공격)",
@@ -68,7 +68,7 @@ const stigma3 = {
         "oName": "테슬라",
         "one": "테",
         "short": "테슬라",
-        "hairColor": "red",
+        "hairColor": ["red"],
         "imgs": ["22E39233597FDBCC13", "21972D33597FDBFF17", "2544EB33597FDC301E"],
         "texts": [
           "마비 상태인 적에게 모든피해 51% 증가",
@@ -84,7 +84,7 @@ const stigma3 = {
         "oName": "헌원 물놀이",
         "one": "물놀이",
         "short": "물놀이",
-        "hairColor": "black",
+        "hairColor": ["black"],
         "imgs": ["22637633597FDBCC0A", "21A87833597FDC0016", "25ED8A33597FDC3111"],
         "texts": [
           "분기 물리피해 15% 증가",
@@ -100,6 +100,7 @@ const stigma3 = {
         "oName": "에디슨",
         "one": "에디슨",
         "short": "에디슨",
+        "hairColor": ["lightBlue"],
         "imgs": ["21E43133597FDBC743", "212E2433597FDBFB1D", "257CAB33597FDC2C1A"],
         "texts": [
           "6초마다 한번 일반공격에 510 전기 원소피해가 부가 (충전, 분기 포함)",
@@ -115,6 +116,7 @@ const stigma3 = {
         "oName": "브로냐 마력",
         "one": "마",
         "short": "마로냐",
+        "hairColor": ["olive"],
         "imgs": ["264DBD33597FDBC30B", "22BBC933597FDBF714", "225B9B33597FDC2809"],
         "texts": [
           "충전 물리피해 20% 증가 (브로냐, 히메코의 차지공격)",
@@ -130,6 +132,7 @@ const stigma3 = {
         "oName": "롤랑",
         "one": "롤",
         "short": "롤랑",
+        "hairColor": ["olive"],
         "imgs": ["250D3133597FDBC10F", "211CA633597FDBF50D", "2640BB33597FDC260B"],
         "texts": [
           "3초마다 HP46 회복",
@@ -145,6 +148,7 @@ const stigma3 = {
         "oName": "히메코 성탄",
         "one": "히메코성탄",
         "short": "히메코성탄",
+        "hairColor": ["red"],
         "imgs": ["24C1D133597FDBCD15", "24B5D033597FDC0115", "2570C233597FDC311B"],
         "texts": [
           "이동속도 8%증가 / 히메코 장비시 이동속도 8% 추가 증가",
@@ -160,6 +164,7 @@ const stigma3 = {
         "oName": "샤를마뉴",
         "one": "샤",
         "short": "샤를",
+        "hairColor": ["lightBrown"],
         "imgs": ["21EAC133597FDBC312", "24C55233597FDBF813", "238ED233597FDC2818"],
         "texts": [
           "SP70% 이상시, SP5% 추가될때마다 일반 물리피해 4%씩 증가 (충전, 분기 포함)",
@@ -175,6 +180,7 @@ const stigma3 = {
         "oName": "오지에",
         "one": "오지에",
         "short": "오지에",
+        "hairColor": ["gold"],
         "imgs": ["27C31C33597FDBC815", "271DA233597FDBFC1E", "271DA233597FDBFC1E"],
         "texts": [
           "SP20% 이하시, 일반 물리피해 20% 증가 (충전, 분기 포함)",
@@ -190,6 +196,7 @@ const stigma3 = {
         "oName": "아자이 차차",
         "one": "차",
         "short": "차차",
+        "hairColor": ["grey", "olive"],
         "imgs": ["23295733597FDBC61F", "25310433597FDBFA0C", "25AC5433597FDC2B16"],
         "texts": [
           "퇴장시, 다음 발키리의 받는 화염 원소피해 26% 감소 / 등장시, 자신의 근접 물리피해 15% 증가",
@@ -205,6 +212,7 @@ const stigma3 = {
         "oName": "나오에 카네쓰구",
         "one": "카네쓰구",
         "short": "카네쓰구",
+        "hairColor": ["green"],
         "imgs": ["2191AF33597FDBC017", "2723AA33597FDBF43E", "26F5A733597FDC2510"],
         "texts": [
           "쉴드가 깨진 적에게 모든피해 25%, 폭격률 15% 증가",
@@ -220,6 +228,8 @@ const stigma3 = {
         "oName": "단오",
         "one": "단오",
         "short": "단오",
+        "isHairColorDiff": true,
+        "hairColor": [["white"], ["black"], ["white", "olive"]],
         "imgs": ["22DE6933597FDBC135", "22E8ED33597FDBF510", "22F54133597FDC260F"],
         "texts": [
           "분기 물리피해 20% 증가, 분기공격 폭격률 5% 증가",
@@ -235,6 +245,7 @@ const stigma3 = {
         "oName": "테레사 기원",
         "one": "기원",
         "short": "기원",
+        "hairColor": ["white"],
         "imgs": ["27392433597FDBCB0D", "21BC5933597FDBFF02", "2653BD33597FDC300A"],
         "texts": [
           "무기 액티브 스킬 사용시, 6초간 모든피해 30% 증가",
@@ -250,6 +261,7 @@ const stigma3 = {
         "oName": "리날도",
         "one": "리",
         "short": "리날도",
+        "hairColor": ["lightBlue"],
         "imgs": ["994A433359AB4F0931", "998EB83359AB4F092E", "9969A73359AB4F0A24"],
         "texts": [
           "폭격시 자신 주위 2m 적들에게 공격력 150%의 물리피해를 입힌다 (쿨타임 5초)",
@@ -265,6 +277,7 @@ const stigma3 = {
         "oName": "시구레 키라",
         "one": "키라",
         "short": "키라",
+        "hairColor": ["white"],
         "imgs": ["992C983A5A99FB551B", "99CA673A5A99FB561F", "998FF33A5A99FB5617"],
         "texts": [
           "모든 원소피해 15% 증가",
@@ -280,6 +293,7 @@ const stigma3 = {
         "oName": "갈릴레오",
         "one": "갈",
         "short": "갈릴",
+        "hairColor": ["brown"],
         "imgs": ["99033D4A5ADA94C91D", "99D85A4A5ADA94C81F", "993DDC4A5ADA94C828"],
         "texts": [
           "극한회피 후 5.0초간, 주는 모든피해 15% 증가, 재발동시 지속시간 초기화",
@@ -295,6 +309,7 @@ const stigma3 = {
         "oName": "호무",
         "one": "호무",
         "short": "호무",
+        "hairColor": ["yellow"],
         "imgs": ["99A4554D5AEF10732C", "99F6BD4D5AEF107424", "996CF24D5AEF10742F"],
         "texts": [
           "일반공격(충전, 분기 포함) 적중시, 50% 확률로 하임 코인이 떨어짐. (쿨타임 4초) / 매 코인당 자신이 주는 모든피해를 10% 증가시킴. (10초 지속, 최대 3중첩)",
@@ -310,6 +325,7 @@ const stigma3 = {
         "oName": "아쿠타가와 류노스케",
         "one": "류",
         "short": "류노",
+        "hairColor": ["black"],
         "imgs": ["9936434B5B24B2171C", "99DA514B5B24B21823", "997CCA4B5B24B2182A"],
         "texts": [
           "근접 물리피해 20% 증가",

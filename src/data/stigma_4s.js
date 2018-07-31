@@ -7,6 +7,7 @@ const stigma4s = {
         "isSingle": true,
         "singlePos": 2,
         "imgs": [null, null, "99BBFD3359F49C8801"],
+        "hairColor": ["grey"],
         "texts": [
           null,
           null,
@@ -23,6 +24,7 @@ const stigma4s = {
         "short": "메이분노",
         "isSingle": true,
         "singlePos": 1,
+        "hairColor": ["black", "lightPurple"],
         "imgs": [null, "235DAB33597FDBF61A", null],
         "texts": [
           null,
@@ -37,6 +39,7 @@ const stigma4s = {
         "short": "폭식",
         "isSingle": true,
         "singlePos": 0,
+        "hairColor": ["white"],
         "imgs": ["9903663359F49C870F", null, null],
         "texts": [
           "공격 후 대상에게 10% 확률로 사탕이 드롭된다.(쿨타임 2초) / 드롭된 사탕을 먹으면 5초간 입히는 모든 피해가 18%증가한다. / 사탕은 8초 뒤에 사라진다.",
@@ -51,6 +54,7 @@ const stigma4s = {
         "short": "나태",
         "isSingle": true,
         "singlePos": 2,
+        "hairColor": ["white", "grey"],
         "imgs": [null, null, "27351833597FDC270D"],
         "texts": [
           null,
@@ -65,6 +69,7 @@ const stigma4s = {
         "short": "남장히메코",
         "isSingle": true,
         "singlePos": 0,
+        "hairColor": ["red"],
         "imgs": ["99C042395AD5678F32", null, null],
         "texts": [
           "근접 물리 데미지가 20% 증가한다. / 히메코가 장비시 차징 공격이 10% 확률로 300% 의 데미지를 줍니다. 12초의 대기 시간을 갖습니다.",
@@ -79,6 +84,7 @@ const stigma4s = {
         "short": "키아나가희",
         "isSingle": true,
         "singlePos": 1,
+        "hairColor": ["white"],
         "imgs": [null, "99124C395AD567910D", null],
         "texts": [
           null,
@@ -93,6 +99,7 @@ const stigma4s = {
         "short": "여장오토",
         "isSingle": true,
         "singlePos": 2,
+        "hairColor": ["yellow", "gold"],
         "imgs": [null, null, "99A0DF395AD5679034"],
         "texts": [
           null,
@@ -107,6 +114,7 @@ const stigma4s = {
         "short": "브로냐인형",
         "isSingle": true,
         "singlePos": 0,
+        "hairColor": ["white", "grey"],
         "imgs": ["9911D0395AD567902B", null, null],
         "texts": [
           "원거리 데미지가 15% 증가한다. / 브로냐가 장비시 40% 확률로 공격대상에게 4초간 족쇄를 겁니다. 10초의 대기 시간을 갖습니다.",

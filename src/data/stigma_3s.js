@@ -6,6 +6,7 @@ const stigma3s = {
       "short": "겨공",
       "isSingle": true,
       "singlePos": 0,
+      "hairColor": ["white"],
       "imgs": ["26DE1533597FDBC701", null, null],
       "texts": [
         "근접 물리피해 20% 증가 / 키아나 장비시, 적을 공격 적중한 경우 20% 확률로 3초간 빙결 상태 부여 (쿨타임 16초)",
@@ -20,6 +21,7 @@ const stigma3s = {
       "short": "진실된사랑영원",
       "isSingle": true,
       "singlePos": 1,
+      "hairColor": ["white", "black"],
       "imgs": [null, "27F36E33597FDBFE10", null],
       "texts": [
         null,
@@ -34,6 +36,7 @@ const stigma3s = {
       "short": "히메코춘절",
       "isSingle": true,
       "singlePos": 2,
+      "hairColor": ["red"],
       "imgs": [null, null, "23201633597FDC320E"],
       "texts": [
         null,
@@ -48,6 +51,7 @@ const stigma3s = {
       "short": "바보테레사",
       "isSingle": true,
       "singlePos": 1,
+      "hairColor": ["white"],
       "imgs": [null, "25C71733597FDBF613", null],
       "texts": [
         null,
@@ -62,6 +66,7 @@ const stigma3s = {
       "short": "사쿠라칠석",
       "isSingle": true,
       "singlePos": 2,
+      "hairColor": ["pink"],
       "imgs": [null, null, "25315D33597FDC280C"],
       "texts": [
         null,
@@ -76,6 +81,7 @@ const stigma3s = {
       "short": "메이신부",
       "isSingle": true,
       "singlePos": 1,
+      "hairColor": ["black"],
       "imgs": [null, "25687033597FDBF619", null],
       "texts": [
         null,
@@ -90,6 +96,7 @@ const stigma3s = {
       "short": "사쿠라여름",
       "isSingle": true,
       "singlePos": 2,
+      "hairColor": ["pink"],
       "imgs": [null, null, "99C80F3359F4A6611E"],
       "texts": [
         null,
@@ -104,6 +111,7 @@ const stigma3s = {
       "short": "히메코신부",
       "isSingle": true,
       "singlePos": 1,
+      "hairColor": ["red"],
       "imgs": [null, "219A7C33597FDC0117", null],
       "texts": [
         null,
@@ -118,6 +126,7 @@ const stigma3s = {
       "short": "메이악마",
       "isSingle": true,
       "singlePos": 1,
+      "hairColor": ["black", "lightPurple"],
       "imgs": [null, "99D0C23359F49C8828", null],
       "texts": [
         null,
@@ -132,6 +141,7 @@ const stigma3s = {
       "short": "마법소녀테레사",
       "isSingle": true,
       "singlePos": 1,
+      "hairColor": ["white"],
       "imgs": [null, "99B556395AD5679004", null],
       "texts": [
         null,
@@ -146,6 +156,7 @@ const stigma3s = {
       "short": "키아나신년",
       "isSingle": true,
       "singlePos": 2,
+      "hairColor": ["white"],
       "imgs": [null, null, "99980D395AD5679106"],
       "texts": [
         null,
@@ -160,6 +171,7 @@ const stigma3s = {
       "short": "메이가희",
       "isSingle": true,
       "singlePos": 1,
+      "hairColor": ["black", "purple"],
       "imgs": [null, "9931F7395AD567900A", null],
       "texts": [
         null,
@@ -174,6 +186,7 @@ const stigma3s = {
       "short": "후카시찰",
       "isSingle": true,
       "singlePos": 2,
+      "hairColor": ["grey"],
       "imgs": [null, null, "9965F13D5AE27D5012"],
       "texts": [
         null,

@@ -2,11 +2,19 @@
   text-align: center;
 }
 
+#root {
+  position: relative;
+}
+
 .App-header {
   background-color: #222;
   height: 90px;
   padding: 30px;
   color: white;
+  position: relative;
+}
+
+.relative {
   position: relative;
 }
 
@@ -72,10 +80,36 @@ textarea.text-area {
   height: 84px;
 }
 
+.stigmaFinder .midLeftContainer {
+  min-height: 320px;
+}
+
+.stigmaFinder .midLeft {
+  position: fixed;
+}
+
+.stigmaFinder img {
+  width: 128px;
+  height: 122px;
+  margin: 2px;
+}
+
 @media (max-width: 767px) {
+  .stigmaFinder .midLeftContainer {
+    min-height: 160px;
+  }
   .text-area img {
     width: 64px;
     height: 56px;
+  }
+
+  .stigmaFinder img {
+    width: 96px;
+    height: 84px;
+  }
+
+  .stigmaFinder .midLeft {
+    position: relative;
   }
 }
 

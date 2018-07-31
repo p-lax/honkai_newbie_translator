@@ -4,6 +4,7 @@ const stigma4 = {
         "oName": "클레오파트라",
         "one": "클",
         "short": "클레오",
+        "hairColor": ["black"],
         "imgs": ["230A2033597FDBCB10", "21CD3E33597FDBFF13", "23C76C33597FDC2F02"],
         "texts": [
           "쉴드가 깨진 적에게 모든피해 41% 증가",
@@ -19,6 +20,7 @@ const stigma4 = {
         "oName": "희헌원",
         "one": "헌",
         "short": "헌원",
+        "hairColor": ["black"],
         "imgs": ["267F5833597FDBCC08", "23C09233597FDC0014", "227CFD33597FDC311A"],
         "texts": [
           "연계 물리피해 62% 증가 (QTE포함)",
@@ -34,6 +36,7 @@ const stigma4 = {
         "oName": "셰익스피어",
         "one": "섹",
         "short": "셰익",
+        "hairColor": ["red"],
         "imgs": ["211F7133597FDBC40F", "243BA533597FDBF81C", "22CF4233597FDC2913"],
         "texts": [
           "전기 원소피해 51% 증가",
@@ -49,6 +52,7 @@ const stigma4 = {
         "oName": "예카테리나",
         "one": "예",
         "short": "예카",
+        "hairColor": ["olive"],
         "imgs": ["2438E033597FDBC80D", "21492433597FDBFB0A", "216F2533597FDC2C1B"],
         "texts": [
           "25 콤보 이상시, 방어력 61% 증가",
@@ -64,6 +68,7 @@ const stigma4 = {
         "oName": "이이",
         "one": "이",
         "short": "이이",
+        "hairColor": ["purple"],
         "imgs": ["23225C33597FDBC90F", "24960733597FDBFD17", "2182CD33597FDC2E19"],
         "texts": [
           "HP80% 이상시, 방어력 103% 증가",
@@ -79,6 +84,7 @@ const stigma4 = {
         "oName": "아인슈타인",
         "one": "아",
         "short": "아인",
+        "hairColor": ["cyan"],
         "imgs": ["22057C33597FDBC510", "27623E33597FDBFA1A", "24677C33597FDC2B1B"],
         "texts": [
           "차지 공격 쉴드 감소량 28% 증가, 자신의 HP 37% 이하시 입히는 모든 피해 36% 증가",
@@ -94,6 +100,7 @@ const stigma4 = {
         "oName": "복희",
         "one": "복",
         "short": "복희",
+        "hairColor": ["black", "brown"],
         "imgs": ["21879F33597FDBC218", "234B8033597FDBF71B", "26BA7233597FDC2715"],
         "texts": [
           "빙결 상태인 적에게 모든 원소피해 92% 증가",
@@ -109,6 +116,7 @@ const stigma4 = {
         "oName": "여와",
         "one": "여",
         "short": "여와",
+        "hairColor": ["black", "brown"],
         "imgs": ["246AF633597FDBC709", "26633C33597FDBFB19", "22D0F233597FDC2C13"],
         "texts": [
           "화상 상태인 적을 공격 적중시, 폭발하여 주위 적에게 공격력 82%에 해당하는 화염 원소피해를 가한다 (쿨타임 1.5초)",
@@ -124,6 +132,7 @@ const stigma4 = {
         "oName": "신농",
         "one": "신농",
         "short": "신농",
+        "hairColor": ["red"],
         "imgs": ["2197EE33597FDBC517", "25183F33597FDBF91E", "23A41033597FDC2A17"],
         "texts": [
           "SP팩 획득시, 10초간 물리피해, 방어력 61% 증가 (쿨타임 15초)",
@@ -139,6 +148,7 @@ const stigma4 = {
         "oName": "정위",
         "one": "정",
         "short": "정위",
+        "hairColor": ["red"],
         "imgs": ["25964433597FDBC917", "224A3333597FDBFD3C", "24AFE233597FDC2E16"],
         "texts": [
           "필드내 전투중인 적의 수가 1 이하시, 모든피해 31% 증가",
@@ -154,6 +164,7 @@ const stigma4 = {
         "oName": "아이작 뉴턴",
         "one": "뉴",
         "short": "뉴턴",
+        "hairColor": ["gold"],
         "imgs": ["22C84A33597FDBC514", "2304E033597FDBF90F", "23C2B033597FDC2A14"],
         "texts": [
           "근접 물리피해 46% 증가, 2회 피격시 10 초간 무효",
@@ -169,6 +180,7 @@ const stigma4 = {
         "oName": "슈뢰딩거",
         "one": "철",
         "short": "슈뢰딩거",
+        "hairColor": ["lightBrown"],
         "imgs": ["27C79C33597FDBC414", "262CE833597FDBF91D", "21AEE533597FDC2916"],
         "texts": [
           "6초마다 한번 다음 일반 모든피해가 50% 확률로 205% 증가 또는 52% 증가 (충전, 분기 포함)",
@@ -184,6 +196,7 @@ const stigma4 = {
         "oName": "막스 플랑크",
         "one": "막",
         "short": "막스",
+        "hairColor": ["green"],
         "imgs": ["21C82033597FDBC214", "24C65A33597FDBF613", "22F38C33597FDC2710"],
         "texts": [
           "HP10%씩 감소할때마다 모든피해 6.2% 씩 증가",
@@ -199,6 +212,7 @@ const stigma4 = {
         "oName": "제갈량",
         "one": "제",
         "short": "제갈",
+        "hairColor": ["white"],
         "imgs": ["251E9933597FDBCA31", "2632EF33597FDBFE0B", "24A62F33597FDC2E17"],
         "texts": [
           "회피효과(방어) 쿨타임 26% 감소",
@@ -214,6 +228,7 @@ const stigma4 = {
         "oName": "흑헌원",
         "one": "흑",
         "short": "흑헌원",
+        "hairColor": ["black"],
         "imgs": ["25D4B833597FDBCD14", "27CF8733597FDC0013", "27F0D533597FDC3111"],
         "texts": [
           "시공단열이 열리면 공격력의 450% 물리피해를 주위의 적에게 입힌다 (쿨타임 20초)",
@@ -229,6 +244,7 @@ const stigma4 = {
         "oName": "이이홍",
         "one": "이",
         "short": "이홍",
+        "hairColor": ["black"],
         "imgs": ["25C13A33597FDBC815", "27943333597FDBFC17", "26532D33597FDC2D1D"],
         "texts": [
           "전투중 HP상한 20% 감소 / 일반 모든피해 36% 증가 (충전, 분기 포함)",
@@ -244,6 +260,7 @@ const stigma4 = {
         "oName": "카렌 서약",
         "one": "카렌서약",
         "short": "카렌서약",
+        "hairColor": ["white", "olive"],
         "imgs": ["27E28433597FDBCA13", "254C3133597FDBFE0A", "232CA933597FDC2F0D"],
         "texts": [
           "일반 공격 적중시, 52% 확률로 주위 적에게 공격력의 123% 의 물리피해를 입힌다 (쿨타임 2초)",
@@ -259,6 +276,7 @@ const stigma4 = {
         "oName": "유키무라",
         "one": "유키무라",
         "short": "유키무라",
+        "hairColor": ["brown"],
         "imgs": ["23DF4133597FDBC813", "247FFA33597FDBFC05", "22490D33597FDC2D1D"],
         "texts": [
           "전투 돌입시 일반 물리피해 35% 증가 (충전, 분기 포함) 15초 지속 (쿨타임 30초)",
@@ -274,6 +292,7 @@ const stigma4 = {
         "oName": "지크프리드 카스라나",
         "one": "지",
         "short": "지크",
+        "hairColor": ["white", "olive"],
         "imgs": ["27B4DE33597FDBCA04", "24191133597FDBFE30", "244EA533597FDC2F1D"],
         "texts": [
           "무기 액티브 사용시, SP소모량 25% 감소 / 6초간 공격속도 35% 증가",
@@ -289,6 +308,7 @@ const stigma4 = {
         "oName": "세실리아 샤니아트",
         "one": "세",
         "short": "세실",
+        "hairColor": ["white"],
         "imgs": ["242D2B33597FDBC40E", "275F5933597FDBF81A", "223A9E33597FDC291E"],
         "texts": [
           "블랙스타 : 일반 물리피해 50% 증가 / 화이트스타 : 분기 물리피해 50% 증가",
@@ -304,6 +324,7 @@ const stigma4 = {
         "oName": "노히메",
         "one": "농",
         "short": "노히메",
+        "hairColor": ["red"],
         "imgs": ["2420E433597FDBC140", "24846D33597FDBF417", "2526E933597FDC250D"],
         "texts": [
           "일반공격시(충전, 분기 포함) 15% 확률로 4 초간 빙결 상태이상 부여 (쿨타임 8초) / 빙결 상태이상에 걸린 적에게 모든피해 40% 증가",
@@ -319,6 +340,7 @@ const stigma4 = {
         "oName": "야에사쿠라",
         "one": "사",
         "short": "야에사쿠라",
+        "hairColor": ["pink"],
         "imgs": ["27BFEB33597FDBC615", "21065333597FDBFB0F", "255DDB33597FDC2C09"],
         "texts": [
           "벚꽃마크 상태인 적이 공격시 40% 확률로 물리피해 80% 감소 / 동시에 공격자에게 1초간 기절 상태 부여 / 인반 폭격 피해 35% 증가",
@@ -334,6 +356,7 @@ const stigma4 = {
         "oName": "제레",
         "one": "제레",
         "short": "제레",
+        "hairColor": ["purple"],
         "imgs": ["2454CB33597FDBCA0B", "218FF133597FDBFE17", "214F3833597FDC2F1D"],
         "texts": [
           "전투중 SP상한이 150이상시 SP20 증가할때마다, 물리피해 6% 씩 증가 최대 6중첩",
@@ -349,6 +372,7 @@ const stigma4 = {
         "oName": "아인밴드",
         "one": "아밴",
         "short": "아인밴드",
+        "hairColor": ["cyan"],
         "imgs": ["21CA3833597FDBC514", "23487A33597FDBFA0A", "2228DB33597FDC2A1F"],
         "texts": [
           "전투를 도와주는 로봇을 소환 / 로봇이 큰 물리피해를 주는 레이져 공격 능력을 해제 / 필드상에 적이 2체 이하일때, 모든피해 25% 증가",
@@ -364,6 +388,8 @@ const stigma4 = {
         "oName": "수영복",
         "one": "수",
         "short": "수영복",
+        "isHairColorDiff": true,
+        "hairColor": [["white"], ["black"], ["white", "grey"]],
         "imgs": ["21826D33597FDBC419", "276A7533597FDBF819", "2669D833597FDC291B"],
         "texts": [
           "일반몹을 죽일시 팀원의 SP8 회복 / 엘리트 또는 보스를 죽일시 SP24 회복 / 매 발동마다 1개의 청량축복을 소비하며, 매 7초마다 1개씩 증가 (최대 3개) / 전투 시작시 청량축복을 모두 충전",
@@ -379,6 +405,7 @@ const stigma4 = {
         "oName": "케플러",
         "one": "케",
         "short": "케플러",
+        "hairColor": ["gold"],
         "imgs": ["277DA833597FDBCA08", "21AFCD33597FDBFF03", "22460633597FDC2F1E"],
         "texts": [
           "폭격시, 대상 주위 3m범위내의 적들에게 공격력의 200% 물리피해를 입힌다 (쿨타임 3초)",
@@ -397,6 +424,7 @@ const stigma4 = {
         "oName": "장형",
         "one": "장형",
         "short": "장형",
+        "hairColor": ["black", "brown"],
         "imgs": ["99DC853359AB4F0A2A", "99A3BA3359AB4F0A14", "9985413359AB4F0B22"],
         "texts": [
           "20콤보 이하시, 출장기가 아닌 모든 피해 25% 증가",
@@ -412,6 +440,7 @@ const stigma4 = {
         "oName": "드라큘라",
         "one": "드",
         "short": "드큘",
+        "hairColor": ["black"],
         "imgs": ["99A70E3359AB4F0C28", "997EA93359AB4F0C2A", "9958523359AB4F0C14"],
         "texts": [
           "출혈 상태인 적에게 물리피해 40% 증가",
@@ -427,6 +456,7 @@ const stigma4 = {
         "oName": "브로냐 암영",
         "one": "브로냐암영",
         "short": "브로냐암영",
+        "hairColor": ["white", "grey"],
         "imgs": ["992B7D3359AB4F0D22", "998DE13359AB4F0D29", "9947D53359AB4F0D15"],
         "texts": [
           "일반 공격의 (충전, 분기 포함) 원거리 물리피해 38% 증가",
@@ -442,6 +472,7 @@ const stigma4 = {
         "oName": "신 말",
         "one": "싱",
         "short": "신말",
+        "hairColor": ["pink", "lightPurple"],
         "imgs": ["9994663359AB4F0E2A", "9909D93359AB4F0E2F", "999B2B3359AB4F0E29"],
         "texts": [
           "은신 상태가 된 후 에너지를 축전한다. / 매 초마다 모든 피해량이 20% 증가하며 최대 3번 중첩된다. / 은신에서 벗어난 경우 4초후 효과가 사라짐",
@@ -457,6 +488,7 @@ const stigma4 = {
         "oName": "나가미츠",
         "one": "장",
         "short": "장광",
+        "hairColor": ["black", "purple"],
         "imgs": ["9947A13359AB4F0B26", "99781D3359AB4F0B23", "99CB6F3359AB4F0B2D"],
         "texts": [
           "자신 주위에 역장을 형성, 역장에 적이 5초 이상 머무를 경우, 매 초마다 공격력의 150%에 해당하는 전기 원소피해를 입힌다. / 역장을 벗어나면 2초 후 사라짐",
@@ -472,6 +504,7 @@ const stigma4 = {
         "oName": "피카소",
         "one": "피",
         "short": "피카소",
+        "hairColor": ["olive"],
         "imgs": ["9988433359AB6FCD27", "9960A73359AB6FCD19", "9947273359AB6FCE1C"],
         "texts": [
           "적색 안료 제공 : 매 일반공격이 (충천, 분기 포함) 1단 충전 획득(쿨타임 1초) / 4단 충전 획득시 6초간 광열상태에 돌입하여 물리피해 32%증가, 지속시간 갱신 가능",
@@ -487,6 +520,7 @@ const stigma4 = {
         "oName": "오토 아포칼립스",
         "one": "오",
         "short": "오토",
+        "hairColor": ["gold", "yellow"],
         "imgs": ["999A0D3359B697FE2D", "999F383359B697FE2A", "9955F03B5AEF0DEE03"],
         "texts": [
           "일반 공격(충천, 분기 미포함) 물리피해 35% 증가 / 매 일반공격이 1개의 중첩 획득 (0.8초 간격) / 3중첩시 다음 충전 공격의 모든피해 75% 증가",
@@ -502,6 +536,7 @@ const stigma4 = {
         "oName": "카렌 송가",
         "one": "송",
         "short": "송가",
+        "hairColor": ["white"],
         "imgs": ["99C8743359F49C8631", "99B5523359F49C8606", "99F3773359F49C8616"],
         "texts": [
           "자신 및 소환물의 물리피해가 20% 증가한다. / 취약 상태인 적에 대한 물리피해가 12% 증가한다.",
@@ -517,6 +552,7 @@ const stigma4 = {
         "oName": "발키리 슈트",
         "one": "발키리슈트",
         "short": "발키리슈트",
+        "hairColor": [["white"], ["white", "olive"], ["black"]],
         "imgs": ["999E413359F49C8532", "9942C93359F49C8526", "99BFAE3359F49C851B"],
         "texts": [
           "극한 회피시 폭발을 일으켜 주변 적에게 공격력의 180% 에 해당하는 물리피해를 입힌다. (쿨타임 4초)",
@@ -532,6 +568,7 @@ const stigma4 = {
         "oName": "비옥환",
         "one": "비",
         "short": "비옥환",
+        "hairColor": ["pink"],
         "imgs": ["99C72D335A1BC2091C", "9959D6335A1BC22B2B", "9953DA335A1BC26D37"],
         "texts": [
           "캐릭터 자신의 화염 원소피해 45%증가 / 일반공격(충전, 분기 포함)으로 적 쉴드 파괴시, 공격력 600의 비옥환을 소환하여 6초간 화염브레스 공격을 한다. / 화염브레스는 소환물 공격력의 320%만큼 화염피해를 입힌다. / 10초의 공유 쿨타임을 가진다.",
@@ -547,6 +584,7 @@ const stigma4 = {
         "oName": "시린",
         "one": "시",
         "short": "시린",
+        "hairColor": ["lightPurple"],
         "imgs": ["99BF2C335A1BC20932", "99541F335A1BC22B0C", "99D1B8335A1BC26E12"],
         "texts": [
           "근접 물리피해 25% 증가, 체공상태적에게 20% 추가 증가.",
@@ -562,6 +600,7 @@ const stigma4 = {
         "oName": "메리 셸리",
         "one": "메",
         "short": "메셸",
+        "hairColor": ["gold", "yellow"],
         "imgs": ["993E52335A1BC20828", "998883335A1BC22B04", "993EC9335A1BC26D21"],
         "texts": [
           "전투 중 HP 15% 증가, 자신의 최대 HP 50%에 비례하는 물리피해가 추가된다. (쿨타임 3초)",
@@ -577,6 +616,7 @@ const stigma4 = {
         "oName": "테슬라 밴드",
         "one": "테",
         "short": "테밴",
+        "hairColor": ["red"],
         "imgs": ["99BF2A335A1BC20932", "996F34335A1BC22B08", "998302335A1BC26E01"],
         "texts": [
           "전장에 있지 않은 경우, 아군의 물리 데미지가 10% 강화된다 (한개의 효과만 적용). / 전장에 있는 경우, 자신의 물리 데미지와 공격속도가 25% 증가한다.",
@@ -592,6 +632,7 @@ const stigma4 = {
         "oName": "슈뢰딩거 밴드",
         "one": "슈",
         "short": "슈밴",
+        "hairColor": ["lightBrown"],
         "imgs": ["9993FA3A5A99FB5717", "99F6023A5A99FB5713", "99CB8F3A5A99FB571F"],
         "texts": [
           "공격마다(0.3초 간격) 물리피해 2% 증가, 7중첩시 5초간 격앙 상태 돌입 / 격앙 상태시 주는 모든피해 25% 증가 / 격앙 상태 해제시 중첩 초기화",
@@ -607,6 +648,7 @@ const stigma4 = {
         "oName": "미켈란젤로",
         "one": "미",
         "short": "미켈",
+        "hairColor": ["lightBrown", "olive"],
         "imgs": ["9978ED3A5A99FB5618", "99E10A3A5A99FB5614", "99D9E83A5A99FB561D"],
         "texts": [
           "통상 공격마다(분기 및 차지 포함) 주는 물리피해 7.2% 증가 / 3초 지속, 5회 중첩, 중첩시 지속시간 초기화",
@@ -622,6 +664,7 @@ const stigma4 = {
         "oName": "모네",
         "one": "모",
         "short": "모네",
+        "hairColor": ["black"],
         "imgs": ["99E0AE4C5ADA94C911", "990D544C5ADA94C91E", "9989844C5ADA94C916"],
         "texts": [
           "적 공격시 번개 원소피해 30% 증가. 콤보당 모든피해 1% 증가(최대 15번 중첩)",
@@ -637,6 +680,7 @@ const stigma4 = {
         "oName": "쿠쿠리아",
         "one": "쿠쿠리아",
         "short": "쿠쿠리아",
+        "hairColor": ["olive"],
         "imgs": ["99734C3359F49C8638", "99A78F3359F49C861D", "99F5273359F49C8716"],
         "texts": [
           "일반공격(충전, 분기 포함) 물리피해가 20% 증가한다. / 자신의 소환물이 필드에 있을때, 자신의 폭격피해가 25% 증가한다.",
@@ -652,6 +696,7 @@ const stigma4 = {
         "oName": "김성탄",
         "one": "김",
         "short": "김성탄",
+        "hairColor": ["black"],
         "imgs": ["991375365A99FB581C", "99FD87365A99FB5813", "9970C2365A99FB5818"],
         "texts": [
           "전투 중 방어력 40% 증가, 얼음 결계내 아군이 주는 원소 피해 15% 증가 (하나의 효과만 적용)",
@@ -667,6 +712,8 @@ const stigma4 = {
         "oName": "선물",
         "one": "선",
         "short": "선물",
+        "isHairColorDiff": true,
+        "hairColor": [["white"], ["black"], ["white", "grey"]],
         "imgs": ["997356365A99FB5918", "997176405A99FB5919", "99060E405A99FB591D"],
         "texts": [
           "체력이 800 이상일 때, 증가된 HP 400 간격으로 주는 물리피해 4% 증가, 7중첩",
@@ -682,6 +729,8 @@ const stigma4 = {
         "oName": "시원한 여름날",
         "one": "물풍선",
         "short": "물풍선",
+        "isHairColorDiff": true,
+        "hairColor": [["white"], ["red"], ["grey"]],
         "imgs": ["25984033597FDBC516", "237B7D33597FDBF918", "256C6333597FDC2A1B"],
         "texts": [
           "공격시 3초후 터져 공격력 300% 의 빙결 원소피해를 주는 물풍선을 지면 위에 생성한다 (쿨타임 9초)",
@@ -697,6 +746,8 @@ const stigma4 = {
         "oName": "신주여행",
         "one": "폭죽",
         "short": "폭죽",
+        "isHairColorDiff": true,
+        "hairColor": [["grey"], ["red"], ["white"]],
         "imgs": ["993BFC425AE919B727", "99587E425AE919B733", "99EFB9425AE919B80E"],
         "texts": [
           "공격시 자신 앞에 폭중통을 설치. 매 초마다 폭죽을 발사하여 주변 적에게 공격력의 150% 만큼 화염원소피해를 준다. / 5초 지속. 쿨타임 12초",

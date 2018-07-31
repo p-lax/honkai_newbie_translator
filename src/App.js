@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import './App.css';
 import Translator from './translator.js'
 import EquipComponent from './components/equipComponent.js'
-import StigmaFinder from './components/stigmaFinder.js'
+import StigmaFinder from './components/stigmaFinder'
 import 'bootstrap/dist/css/bootstrap.css'
 
 class App extends Component {
@@ -10,11 +10,32 @@ class App extends Component {
     super(props);
     this.state = {value: ''};
     this.handleChange = this.handleChange.bind(this);
-    this.version = "beta 1.1.0"
+    this.version = "beta 1.1.1"
   }
 
   handleChange(event) {
     this.setState({value: event.target.value, translated: Translator(event.target.value)});
+  }
+
+  openModal(target) {
+    this.setState({
+      modal: true
+    })
+  }
+
+  doSearchResult(target) {
+    console.log(target);
+    if(target){
+      this.setState({
+        value: target, translated: Translator(target),
+        modal: false
+      })
+    } else {
+      this.setState({
+        modal: false
+      })
+
+    }
   }
 
   notice() {
@@ -24,6 +45,7 @@ class App extends Component {
       <ul>3성, 4성 성흔</ul>
       <ul>스타일링 테스트용 무기 (써드, 후부키)</ul>
       <ul>쌍권총, 건틀릿</ul>
+      <ul>성흔 찾기 (테스트중)</ul>
       <br/>
       <span>- 다음에 적용될 내용</span>
       <ul>무기</ul>
@@ -50,16 +72,17 @@ class App extends Component {
   render() {
     return (
       [
-      <div className="App">
+      <div className="App" key={"mainApp"}>
         <header className="App-header">
           <h1 className="App-title"><i className="main_icon"></i>키갤 장비성흔 번역기</h1>
           <div className="versiontag">{this.version}</div>
         </header>
         <div className="App-intro container">
           <div className="row">
-            <div className="col-sm noselect">
-              <textarea className="text-area" value={this.state.value} onChange={this.handleChange}
+            <div className="col-sm noselect text-right">
+              <textarea style={styles.textArea} className="text-area" value={this.state.value} onChange={this.handleChange}
                 placeholder="성흔,장비 약자를 입력 (예: 미막미 후붘)" />
+              <a style={styles.searchOpenButton} href="javascript:void(0)" onClick={this.openModal.bind(this, 'search')}>◎ 찾는 성흔이름을 모른다면</a>
             </div>
             <div className="col-sm">
               <div className="text-area">
@@ -71,8 +94,26 @@ class App extends Component {
           </div>
         </div>
       </div>,
+      this.state.modal? <StigmaFinder visible={true} key={"mainFinder"} doSearchResult={this.doSearchResult.bind(this)}  /> : null,
+      this.state.modal? <div key="curtain" onClick={this.closeModals} style={styles.curtain} /> : null,
       ]
     );
+  }
+}
+
+const styles = {
+  curtain: {
+    position: 'fixed',
+    backgroundColor: 'rgba(0,0,0,0.3)',
+    left: 0, top: 0, bottom: 0, right: 0,
+    zIndex: 9998
+  },
+  textArea: {
+    marginBottom: 0
+  },
+  searchOpenButton: {
+    fontSize: 14,
+    paddingBottom: 10
   }
 }
 
