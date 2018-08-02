@@ -28,7 +28,7 @@ const weapon_gauntlet = {
       "passive": "전기원소피해 40% 증가"
     },
     "잔화지연": {
-      "oName": "잔화지연 피스 메이커",
+      "oName": "잔화지연",
       "type": "건틀릿",
       "short": "잔화지연",
       "img": "993151385AF2A0970E",

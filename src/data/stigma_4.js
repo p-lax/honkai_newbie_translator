@@ -764,7 +764,7 @@ const stigma4 = {
         "one": "구스타프",
         "short": "구스타프",
         "hairColor": ["red"],
-        "imgs": ["GustavKlimt-0", "GustavKlimt-1", "GustavKlimt-2"],
+        "imgs": ["S4BM_1", "S4BM_2", "S4BM_3"],
         "texts": [
           "물리 피해 20% 증가，혈혼 저주를 가진 적에게 피격 시 받는 모든 피해 20% 감소。",
           "무기 액티브 스킬을 사용하면，모든 팀원의 물리 피해 20% 증가，지속 시간 8초，쿨타임 16초，오직 하나의 성흔만 발동한다",
