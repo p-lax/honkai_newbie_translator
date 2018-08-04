@@ -43,12 +43,10 @@ class App extends Component {
       <span>아직 개발중인 버전이므로, 많은 문제가 있을 수 있음.</span><br/><br/>
       <span>- 적용된 내용</span>
       <ul>3성, 4성 성흔</ul>
-      <ul>스타일링 테스트용 무기 (써드, 후부키)</ul>
-      <ul>쌍권총, 건틀릿</ul>
+      <ul>무기 (잘 안쓰는건 제외)</ul>
       <ul>성흔 찾기 (테스트중)</ul>
       <br/>
       <span>- 다음에 적용될 내용</span>
-      <ul>무기</ul>
       <ul>발키리 이름</ul>
       <br/>
       <span>- 주의점</span>
