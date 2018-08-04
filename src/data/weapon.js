@@ -1,6 +1,8 @@
 import weapon_handgun from "./weapon_handgun.js"
 import weapon_longsword from "./weapon_longsword.js"
 import weapon_holycross from "./weapon_holycross.js"
+import weapon_cannon from "./weapon_cannon.js"
+import weapon_greatsword from "./weapon_greatsword.js"
 import weapon_gauntlet from "./weapon_gauntlet.js"
 
 let parseRevToken = (input) => {
@@ -23,6 +25,8 @@ const weapon = {
   ...weapon_longsword.data,
   ...weapon_gauntlet.data,
   ...weapon_holycross.data,
+  ...weapon_cannon.data,
+  ...weapon_greatsword.data,
 
   "null": {
     "oName": "",
@@ -37,7 +41,9 @@ const weapon = {
     ...weapon_handgun.token,
     ...weapon_gauntlet.token,
     ...parseRevToken(weapon_longsword.token_rev),
-    ...parseRevToken(weapon_holycross.token_rev)
+    ...parseRevToken(weapon_holycross.token_rev),
+    ...parseRevToken(weapon_cannon.token_rev),
+    ...parseRevToken(weapon_greatsword.token_rev),
   }
 }
 
