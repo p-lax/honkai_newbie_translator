@@ -1,7 +1,7 @@
 const consts = {
   // imgDomain: "https://t1.daumcdn.net/cfile/tistory/",
   imgDomain: "https://p-lax.github.io/honkai_newbie_translator/img/",
-  imgDomain: "./img/",
+  // imgDomain: "./img/",
   version: "beta 1.2.0",
   hairColor: {
     cyan: '#6BADC5',
