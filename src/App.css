@@ -94,6 +94,14 @@ textarea.text-area {
   margin: 2px;
 }
 
+.charaHr {
+  margin-right: 180px;
+}
+
+.charaBackImage {
+  right: 0;
+}
+
 @media (max-width: 767px) {
   .stigmaFinder .midLeftContainer {
     min-height: 160px;
@@ -111,8 +119,22 @@ textarea.text-area {
   .stigmaFinder .midLeft {
     position: relative;
   }
+
+  .charaContainerImageSpace {
+    padding-top: 270px;
+  }
+
+  .charaBackImage {
+    top: 30px;
+    right: 50%;
+    margin-right: -74px;
+  }
+
+  .charaHr {
+    margin-right: 0;
+  }
 }
 
 div.text-area {
-  background-color: #efefef;
+  background-color: #f2f2f2;
 }

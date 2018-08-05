@@ -26,6 +26,19 @@ class EquipComponent extends Component {
     }
   }
 
+  doSearchResult() {
+    this.props.doSearchResult(this.props.prev)
+  }
+
+  makeImageTagSmall(urlKey, type, alt) {
+    if(urlKey) {
+      // return <img src={"./img/"+type+"/" + urlKey + ".png"} alt={alt} />
+      return <img style={styles.small} src={consts.imgDomain + "/" + type + "/" + urlKey + ".png"} alt={alt} />
+    } else {
+      return <span />
+    }
+  }
+
   makeImageTag(urlKey, type, alt) {
     if(urlKey) {
       // return <img src={"./img/"+type+"/" + urlKey + ".png"} alt={alt} />
@@ -96,7 +109,7 @@ class EquipComponent extends Component {
             ]
           ):(
             [
-              <font color="#888888">- {makeBr(item.sSet[0])}</font>,
+              <font key={makeKey()} color="#888888">- {makeBr(item.sSet[0])}</font>,
               " ", <br key={makeKey()} />, <br key={makeKey()} />,
             ]
           )
@@ -135,9 +148,23 @@ class EquipComponent extends Component {
     if(weapon.short || stigmaHeadText)
       headText = "- " + [weapon.short, stigmaHeadText].filter((a)=>!!a).join(" ");
 
+    if(this.props.compact) {
+      return (
+        <p>
+          <font size="2">
+            {this.makeImageTagSmall(weapon.img, "weapon", weapon.short)}&nbsp;&nbsp;&nbsp;
+            {this.makeImageTagSmall(stigma[0].imgs[0], "stigma", stigma[0].short)}
+            {this.makeImageTagSmall(stigma[1].imgs[1], "stigma", stigma[1].short)}
+            {this.makeImageTagSmall(stigma[2].imgs[2], "stigma", stigma[2].short)}
+          </font>
+        </p>
+      )
+    }
+
     return (
-      <p>
+      <p style={styles.container}>
         <font size="2">
+          {this.props.prev?<span onClick={this.doSearchResult.bind(this)} style={styles.prev}>돌아가기</span>:null}
           <span>{headText}</span><br/>
           {this.makeImageTag(weapon.img, "weapon", weapon.short)}&nbsp;&nbsp;&nbsp;
           {this.makeImageTag(stigma[0].imgs[0], "stigma", stigma[0].short)}
@@ -160,6 +187,19 @@ class EquipComponent extends Component {
         </font>
       </p>
     );
+  }
+}
+
+const styles = {
+  container: {
+    position: 'relative'
+  },
+  small: {
+    width: 64, height: 56
+  },
+  prev: {
+    position: 'absolute',
+    right: 0, color: '#007bff', cursor: 'pointer'
   }
 }
 

@@ -1,20 +1,28 @@
 import React, { Component } from 'react';
 import './App.css';
 import Translator from './translator.js'
-import EquipComponent from './components/equipComponent.js'
+import EquipComponent from './components/equipComponent.jsx'
+import CharaComponent from './components/charaComponent.jsx'
+
+import consts from './data/const';
+
 import StigmaFinder from './components/stigmaFinder'
 import 'bootstrap/dist/css/bootstrap.css'
 
 class App extends Component {
   constructor(props) {
-    super(props);
-    this.state = {value: ''};
-    this.handleChange = this.handleChange.bind(this);
-    this.version = "beta 1.1.3"
+    let value = ''
+    super(props)
+    this.state = {value: value, translated: Translator(value)}
+    this.handleChange = this.handleChange.bind(this)
+    this.version = consts.version
   }
 
   handleChange(event) {
-    this.setState({value: event.target.value, translated: Translator(event.target.value)});
+    this.setState({
+      value: event.target.value, translated: Translator(event.target.value),
+      prev: null
+    });
   }
 
   openModal(target) {
@@ -23,13 +31,20 @@ class App extends Component {
     })
   }
 
-  doSearchResult(target) {
-    console.log(target);
+  doSearchResult(target, canPrev) {
     if(target){
-      this.setState({
-        value: target, translated: Translator(target),
-        modal: false
-      })
+      if(canPrev){
+        this.setState({
+          value: target, translated: Translator(target),
+          prev: "" + this.state.value,
+          modal: false
+        })
+      } else {
+        this.setState({
+          value: target, translated: Translator(target),
+          prev: null, modal: false
+        })
+      }
     } else {
       this.setState({
         modal: false
@@ -45,9 +60,10 @@ class App extends Component {
       <ul>3성, 4성 성흔</ul>
       <ul>무기 (잘 안쓰는건 제외)</ul>
       <ul>성흔 찾기 (테스트중)</ul>
+      <ul>발키리 데이터 (테스트중, 테레사만 적용)</ul>
       <br/>
       <span>- 다음에 적용될 내용</span>
-      <ul>발키리 이름</ul>
+      <ul>발키리</ul>
       <br/>
       <span>- 주의점</span>
       <ul>일부 성흔의 1글자짜리 약자는 사용하지 않음. (예: 제레, 이이, 아인슈타인 등)</ul>
@@ -64,7 +80,11 @@ class App extends Component {
     if(!!!data || !!!data.hasItem ){
       return this.notice();
     }
-    return (<div><EquipComponent value={data} /></div>);
+    if(data.t === "equip"){
+      return (<div><EquipComponent value={data} prev={this.state.prev} doSearchResult={this.doSearchResult.bind(this)} /></div>);
+    } else if(data.t === "chara"){
+      return (<div style={{position: 'relative'}}><CharaComponent doSearchResult={this.doSearchResult.bind(this)} value={data} /></div>);
+    }
   }
 
   render() {
@@ -77,12 +97,12 @@ class App extends Component {
         </header>
         <div className="App-intro container">
           <div className="row">
-            <div className="col-sm noselect text-right">
+            <div className="col-lg noselect text-right" style={{paddingBottom: 3}}>
               <textarea style={styles.textArea} className="text-area" value={this.state.value} onChange={this.handleChange}
                 placeholder="성흔,장비 약자를 입력 (예: 미막미 후붘)" />
               <a style={styles.searchOpenButton} href="javascript:void(0)" onClick={this.openModal.bind(this, 'search')}>◎ 찾는 성흔이름을 모른다면</a>
             </div>
-            <div className="col-sm">
+            <div className="col-lg">
               <div className="text-area">
               {
                 this.makeHtml(this.state.translated)

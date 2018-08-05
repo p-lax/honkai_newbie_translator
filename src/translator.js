@@ -1,10 +1,14 @@
 import dataStigma from "./data/stigma.js"
 import dataWeapon from "./data/weapon.js"
+import dataChara from "./data/chara"
 
 window.dataWeapon = dataWeapon;
 
 const weaponTokenList = [].concat(Object.keys(dataWeapon.token));
 const weaponTokenLen = weaponTokenList.length;
+
+const charaTokenList = [].concat(Object.keys(dataChara.token));
+const charaTokenLen = charaTokenList.length;
 
 const Translator = (text) => {
   let stigmaExceptionList = [].concat(Object.keys(dataStigma.exception));
@@ -35,6 +39,7 @@ const Translator = (text) => {
   let getStigmaFromTokenIndex = (a) => dataStigma[dataStigma.token[a]];
 
   let result = {
+    t: "equip",
     w: dataWeapon["null"],
     s: [
       dataStigma["null"], dataStigma["null"], dataStigma["null"]
@@ -46,6 +51,14 @@ const Translator = (text) => {
     let index = text.indexOf(stigmaExceptionList[i])
     if(index >= 0) stigmaExceptionResult = [stigmaExceptionList[i], dataStigma.exception[stigmaExceptionList[i]]]
   }
+
+  // 캐릭터토큰
+  for(i=0;i<charaTokenLen;i++){
+    let token = charaTokenList[i]
+    let index = text.indexOf(token)
+    if(index >= 0) return { hasItem: true, c: dataChara[dataChara.token[token]], t: "chara" }
+  }
+
 
   if(stigmaExceptionResult) {
     text = text.replace(stigmaExceptionResult[0], stigmaExceptionResult[1]);

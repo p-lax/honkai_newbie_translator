@@ -21,12 +21,10 @@ class StigmaFinder extends Component {
   }
 
   setWrapperRef(node) {
-    console.log(node)
     this.wrapperRef = node
   }
 
   handleClickOutside(event) {
-    console.log("??", this.wrapperRef, this)
     if(this.wrapperRef && !this.wrapperRef.contains(event.target))
       this.searchResult(null)
   }
@@ -48,7 +46,6 @@ class StigmaFinder extends Component {
   }
 
   searchResult(target) {
-    console.log("?")
     this.props.doSearchResult(target)
   }
 
