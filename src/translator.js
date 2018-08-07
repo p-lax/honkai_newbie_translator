@@ -2,6 +2,8 @@ import dataStigma from "./data/stigma.js"
 import dataWeapon from "./data/weapon.js"
 import dataChara from "./data/chara"
 
+import consts from "./data/const"
+
 window.dataWeapon = dataWeapon;
 
 const weaponTokenList = [].concat(Object.keys(dataWeapon.token));
@@ -51,6 +53,8 @@ const Translator = (text) => {
     let index = text.indexOf(stigmaExceptionList[i])
     if(index >= 0) stigmaExceptionResult = [stigmaExceptionList[i], dataStigma.exception[stigmaExceptionList[i]]]
   }
+
+  if(!text && consts.testText) text = consts.testText
 
   // 캐릭터토큰
   for(i=0;i<charaTokenLen;i++){
