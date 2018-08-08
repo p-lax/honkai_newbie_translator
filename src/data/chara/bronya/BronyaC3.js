@@ -77,12 +77,12 @@ const BronyaC3 = {
           "sub": [
             {
               "name": "긴급 회피",
-              "icon": "Skill_Nagative_Startup01",
+              "icon": "Skill_Nagative_StartUp01",
               "text": "공격당하는 순간 교대하면 8.0초 동안 이동 속도가 30.0% 증가한다.",
             },
             {
               "name": "QTE - 프로스트 노바",
-              "icon": "Skill_Nagative_Startup02",
+              "icon": "Skill_Nagative_StartUp02",
               "text": " 적이 띄워졌을 때 QTE 교대하면 발동된다. 넓은 범위의 적에게 3,996의 물리 대미지를 입히고 2.5초 동안 빙결 상태로 만든다.",
             },
           ]

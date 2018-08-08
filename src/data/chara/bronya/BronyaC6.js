@@ -81,12 +81,12 @@ const BronyaC6 = {
           "sub": [
             {
               "name": "경화 기갑",
-              "icon": "Skill_Nagative_Startup01",
+              "icon": "Skill_Nagative_StartUp01",
               "text": "교대기를 강화하여 공격력의 175%+175%만큼의 물리 대미지를 입힌다.",
             },
             {
               "name": "QTE - 역장 제압",
-              "icon": "Skill_Nagative_Startup03",
+              "icon": "Skill_Nagative_StartUp03",
               "text": "QTE : 적이 띄워지거나 시공 감속일 때 발동. 대상 근처 큰 범위의 적을 지면에 찍어눌러 다운시키고, 3*320%만큼 물리 대미지를 입히고 6초간 은신 상태가 된다. (QTE 지속시간 동안엔 회피로 은신 상태가 될 수 없다.)",
             },
           ]

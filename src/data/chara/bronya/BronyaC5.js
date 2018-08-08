@@ -75,18 +75,18 @@ const BronyaC5 = {
             {
               "name": "폭렬 돌격",
               "link": true,
-              "icon": "Skill_Nagative_Startup01",
+              "icon": "Skill_Nagative_StartUp01",
               "text": "실드 어택에 맞은 적에게 1,125의 물리 대미지를 입힌다. 중장 토끼가 캐릭터 공격력의 20.0% 를 적용받는다.",
             },
             {
               "name": "QTE - 체공 에너지",
               "link": true,
-              "icon": "Skill_Nagative_Startup02",
+              "icon": "Skill_Nagative_StartUp02",
               "text": "QTE : 적이 시공 감속일 때 발동. 중장 토끼는 적에게 폭렬 돌격 스킬을 사용하고, 캐릭터는 공격력의 550%의 대미지를 입히고 적을 5.0초간 기절시킨다.",
             },
             {
               "name": "원격 제어",
-              "icon": "Skill_Nagative_Startup03",
+              "icon": "Skill_Nagative_StartUp03",
               "text": "캐릭터가 필드를 떠나도 중장 토끼는 12.0초간 필드에 남아있는다.",
             },
           ]

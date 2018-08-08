@@ -70,12 +70,12 @@ const BronyaC1 = {
           "sub": [
             {
               "name": "허공 강타",
-              "icon": "Skill_Nagative_Startup01",
+              "icon": "Skill_Nagative_StartUp01",
               "text": "공중에 뜬 적에게 중력 분쇄 명중 시 공격력의 300%의 물리 대미지를 입힌다.",
             },
             {
               "name": "QTE - 초중력장",
-              "icon": "Skill_Nagative_Startup02",
+              "icon": "Skill_Nagative_StartUp02",
               "rank": "S",
               "text": "적이 기절 상태일 때 QTE 교대하면 발동된다. 공격력의 100%+4,158.0의 물리 대미지를 입히고, 공중에 뜬 적을 3초 동안 시공 속박 상태로 만든다.",
             },

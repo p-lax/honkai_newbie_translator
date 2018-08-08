@@ -71,12 +71,12 @@ const BronyaC2 = {
           "sub": [
             {
               "name": "강력 충돌",
-              "icon": "Skill_Nagative_Startup01",
+              "icon": "Skill_Nagative_StartUp01",
               "text": "실드 어택에 맞은 적에게 1,125 의 물리 대미지를 추가로 입힌다.",
             },
             {
               "name": "QTE - 붕괴 실드",
-              "icon": "Skill_Nagative_Startup02",
+              "icon": "Skill_Nagative_StartUp02",
               "text": "적이 시공 감속 상태일 때 QTE 교대하면 발동된다. 실드 어택이 발동되며 공격력의 450%의 물리 대미지를 입히고 5.0초 동안 기절 상태로 만든다.",
             },
           ]

@@ -66,17 +66,17 @@ const BronyaC4 = {
           "sub": [
             {
               "name": "차원 절단",
-              "icon": "Skill_Nagative_Startup01",
+              "icon": "Skill_Nagative_StartUp01",
               "text": "시공 감속 상태의 적에게 물리 및 원소 대미지 80.0% 증가, 적이 차원 인력의 영향을 받는 시간 동안 0.5초마다 248의 물리 대미지를 주는 출혈 상태로 만든다.",
             },
             {
               "name": "차원의 경계",
-              "icon": "Skill_Nagative_Startup02",
+              "icon": "Skill_Nagative_StartUp02",
               "text": "차원 흡인의 영향 범위가 3.0배 늘어나고, 지속 시간이 3.0초 증가한다.",
             },
             {
               "name": "QTE - 무한 차원",
-              "icon": "Skill_Nagative_Startup03",
+              "icon": "Skill_Nagative_StartUp03",
               "text": "적이 마비 상태일 때 QTE 교대하면 발동된다. 넓은 범위에 475*10의 화염 대미지를 입히고, 띄워져 있는 적은 시공 속박 상태로 만든다.",
             },
           ]
