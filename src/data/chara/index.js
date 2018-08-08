@@ -1,5 +1,6 @@
 import theresa from "./theresa"
 import kiana from "./kiana"
+import bronya from "./bronya"
 
 import equip_preset from "./equip_preset"
 // import stigma3s from "./stigma_3s.js"
@@ -35,6 +36,7 @@ let chara = {
   // ...stigma4s.data,
   ...theresa.data,
   ...kiana.data,
+  ...bronya.data,
 
   "null": {
     "oName": "",
@@ -49,6 +51,7 @@ let chara = {
   "token": {
     ...parseRevToken(theresa.token_rev),
     ...parseRevToken(kiana.token_rev),
+    ...parseRevToken(bronya.token_rev),
     // ...stigma3.token,
     // ...stigma3s.token,
     // ...stigma4.token,

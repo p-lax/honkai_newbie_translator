@@ -181,7 +181,7 @@ const stigma3 = {
         "one": "오지에",
         "short": "오지에",
         "hairColor": ["gold"],
-        "imgs": ["27C31C33597FDBC815", "271DA233597FDBFC1E", "271DA233597FDBFC1E"],
+        "imgs": ["27C31C33597FDBC815", "271DA233597FDBFC1E", "2742A033597FDC2D1E"],
         "texts": [
           "SP20% 이하시, 일반 물리피해 20% 증가 (충전, 분기 포함)",
           "SP20% 이하시, 받는 물리피해 25% 감소",
